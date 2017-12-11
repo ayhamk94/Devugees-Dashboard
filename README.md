@@ -30,7 +30,7 @@
 #### Push your branch to GitHub and create a merge request.
 
 ### Always make sure you are working on your own branch and creating a merge. requst into `Develop`.
-###DONT WORK ON `DEVELOP` OR PUSH TO ` DEVELOP`.
+### DONT WORK ON `DEVELOP` OR PUSH TO ` DEVELOP`.
 
 
 
@@ -70,7 +70,7 @@ export default Dashboard;
 #### Use your css file inside the main component of your widget.
 ```javascript
 import React from 'react';
-import '/example.css';
+import './example.css';
 
 class Example extends React.Component {
   render() {
