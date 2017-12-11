@@ -1,6 +1,12 @@
 .App {
   text-align: center;
 }
+.main {
+
+}
+.main h1 {
+  font-weight: lighter;
+}
 .widgets-container {
   border-top: 1px solid #353535;
   padding: 3rem;
