@@ -1,13 +1,11 @@
 import React from 'react';
-import TextField from 'material-ui/TextField';
+import './example.css';
 
 class Example extends React.Component {
   render() {
     return(
       <div>
-
-        <h2>This is example app</h2>
-        <TextField/>
+        <h2>This is an example app</h2>
       </div>
     )
   }
