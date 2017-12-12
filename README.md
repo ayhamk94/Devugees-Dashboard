@@ -9,11 +9,13 @@
 `cd devugees-dashboard`
 #### Install the dependencies.
 `npm install`
+or
 `yarn install` if you are using yarn.
 
 
 #### Start the server.
 `npm start`
+or
 `yarn start` if you are using yarn.
 ## Git rules
 #### Make sure you pull all the recent changes.
