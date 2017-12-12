@@ -1,6 +1,9 @@
 .App {
   text-align: center;
 }
+.widgets-container {
+  padding: 3rem;
+}
 .main {
   margin-top: 2rem;
   display: flex;

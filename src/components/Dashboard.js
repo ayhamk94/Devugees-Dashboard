@@ -10,6 +10,9 @@ class Dashboard extends React.Component {
   render() {
     return(
       <div className="main">
+        <div class="bg-primary p-2">
+          <h1 class="color-white m-0">Devugees Dashboard</h1>
+        </div>
         <Paper
           zDepth={2}
           style={{
