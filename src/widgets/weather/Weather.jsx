@@ -1,4 +1,5 @@
 import React from 'react';
+import './weather.css';
 
 export default class Weather extends React.Component {
   constructor(props) {
@@ -14,13 +15,22 @@ export default class Weather extends React.Component {
   }
 
   render() {
-    console.log(this.state.data.city);
-  const cityName =   this.state.data.city ? this.state.data.city.name : 'loading...'
+    const { data } = this.state;
     return (
       <div>
+      {
+        data.city ?
+        <div id="weather">
+          <img src={`./weatherIcons/${data.list[0].weather[0].icon}.svg`}></img>
+          <h1>{data.city.name}</h1>
+          <p>{data.list[0].weather[0].description}</p>
+          <p>{`${Math.round(data.list[0].main.temp)}°`}</p>
+        </div>
+        :
         <h1>
-          {cityName}
+          loading...
         </h1>
+      }
       </div>
     )
   }
