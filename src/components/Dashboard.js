@@ -2,6 +2,7 @@ import React from 'react';
 import Paper from 'material-ui/Paper';
 import Example from '../widgets/example/example';
 import Weather from '../widgets/weather/Weather';
+import Activity from '../widgets/activity/Activity';
 import Clock from '../widgets/clock/Clock';
 import Movie from '../widgets/movie/Movie';
 import Widget from './Widget';
@@ -32,7 +33,10 @@ class Dashboard extends React.Component {
           <Widget>
             <Movie/>
           </Widget>
-        </Masonry>
+          <Widget>
+            <Activity/>
+          </Widget>
+          </Masonry>
         </Paper>
       </div>
 

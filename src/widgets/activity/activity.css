@@ -1,0 +1,8 @@
+.activity{
+  padding: 0;
+  list-style: none;
+}
+.activity li{
+  display: flex; 
+  justify-content: space-between;
+}
