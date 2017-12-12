@@ -2,33 +2,18 @@
   text-align: center;
 }
 .main {
-  margin-top: 1.5rem;
+  margin-top: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-/*#header {
-  font-size: 4rem;
-  font-weight: bold;
-  padding: 2rem;
-  margin: 0px;
-  border-bottom: 3px solid #F44336;
-  transition: border-bottom 1s ease;
-  animation-name: color-shift;
-  animation-duration: 4s;
-  animation-iteration-count: infinite;
-}*/
 .widget-container {
   display: flex;
   flex-direction: row;
-  padding: 1rem;
-  animation-name: color-shift;
+  padding: .5rem;
   animation-duration: 20s;
   border-radius: .4rem;
-  animation-iteration-count: infinite;
-  border: 3px solid #F44336;
-
 }
 
 @keyframes color-shift {
@@ -37,5 +22,4 @@
   50% {border: 3px solid #4CAF50}
   75% {border: 3px solid #FFEB3B}
   100% {border: 3px solid #F44336}
-
 }

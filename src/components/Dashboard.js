@@ -16,7 +16,7 @@ class Dashboard extends React.Component {
             backgroundColor: '#EEEEEE',
             borderRadius: '0.2rem',
             width:'80%',
-            padding:' 1rem',
+            padding:' 0.5rem',
             display:'flex',
             flexDirection:'column'
           }}>
