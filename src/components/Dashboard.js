@@ -1,6 +1,7 @@
 import React from 'react';
 import Example from '../widgets/example/example';
 import Weather from '../widgets/weather/Weather';
+import Clock from '../widgets/clock/Clock';
 import Widget from './Widget';
 
 class Dashboard extends React.Component {
@@ -10,7 +11,7 @@ class Dashboard extends React.Component {
         <h1>DEVUGEES DASHBOARD</h1>
         <div className="widgets-container">
           <Widget>
-            <Example/>
+            <Clock/>
           </Widget>
           <Widget>
             <Weather/>
