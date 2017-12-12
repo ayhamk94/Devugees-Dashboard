@@ -1,6 +1,7 @@
 import React from 'react';
 import './weather.css';
-import MainInfo from './mainInfo'
+import MainInfo from './mainInfo';
+import Spinner from '../../components/Spinner';
 export default class Weather extends React.Component {
   constructor(props) {
     super(props);
@@ -22,9 +23,7 @@ export default class Weather extends React.Component {
         data.city ?
         <MainInfo data={data}/>
         :
-        <h1>
-          loading...
-        </h1>
+        <Spinner/>
       }
       </div>
     )
