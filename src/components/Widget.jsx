@@ -3,7 +3,12 @@ import Paper from 'material-ui/Paper';
 
 
 const Widget = (props)=> (
-  <Paper zDepth={1} style={{padding: '2rem', margin:'0.5rem', borderRadius:'0.4rem'}}>
+  <Paper zDepth={1}
+    style={{
+      padding: '2rem',
+      margin:'0.5rem',
+      borderRadius:'0.2rem',
+    }}>
     {props.children}
   </Paper>
 )
