@@ -17,9 +17,10 @@ export default class Activity extends React.Component {
   render() {
     const { data } = this.state;
     return (
-      <div>
+      <div class="activity" >
         <h1>THE TOMMY WIDGET</h1>
-        <ul class="activity" style={{height: '100%'}}>
+        <h3>github recent activity</h3>
+        <ul style={{height: '100%'}}>
           {
             data.length > 1 ?
             data.map((data, i) => <MainInfo key={i} data={data}/>)

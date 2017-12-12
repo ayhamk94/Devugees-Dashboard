@@ -1,8 +1,11 @@
-.activity{
+.activity h1{
+  margin: 0;
+}
+.activity ul{
   padding: 0;
   list-style: none;
 }
-.activity li{
+.activity ul li{
   display: flex; 
   justify-content: space-between;
 }
