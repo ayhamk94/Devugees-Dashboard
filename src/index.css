@@ -1,7 +1,32 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,500,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700);html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%
+}
 body {
   margin: 0;
   padding: 0;
   background-color: #212121;
   font-family: sans-serif;
-  font-family: 'Roboto', sans-serif;
+  background-color: #e6e6e6;
+  font-family: 'Raleway', sans-serif;
+  color: #353535;
+}
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+}
+.bg-primary {
+  background-color: rgba(0, 122, 255, 0.8);
+}
+.color-white {
+  color: white
+}
+
+.m-0 {
+  margin: 0;
+}
+.p-2 {
+  padding: 2em;
 }
