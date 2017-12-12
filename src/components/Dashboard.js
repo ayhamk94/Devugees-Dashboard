@@ -2,6 +2,7 @@ import React from 'react';
 import Example from '../widgets/example/example';
 import Weather from '../widgets/weather/Weather';
 import Clock from '../widgets/clock/Clock';
+import Movie from '../widgets/movie/Movie';
 import Widget from './Widget';
 
 class Dashboard extends React.Component {
@@ -15,6 +16,9 @@ class Dashboard extends React.Component {
           </Widget>
           <Widget>
             <Weather/>
+          </Widget>
+          <Widget>
+            <Movie/>
           </Widget>
         </div>
       </div>
