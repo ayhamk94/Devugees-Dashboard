@@ -55,9 +55,9 @@
 .date {
   margin-top: 1rem;
   font-weight: 200;
+  user-select: none;
 }
 
 .date .day {
   font-size: 30px;
-  user-select: none;
 }
