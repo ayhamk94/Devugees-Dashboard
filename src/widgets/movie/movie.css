@@ -1,0 +1,39 @@
+.movie-wrapper {
+  display: flex;
+  width: 500px;
+}
+
+.movie-img {
+  flex: 1;
+}
+
+.movie-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  text-align: left;
+  flex: 2;
+}
+
+.movie-info h1 {
+  margin: 0
+}
+
+.movie-info p {
+  flex: 2;
+  font-size: 15px;
+  font-weight: 200;
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 6px;
+}
+
+.movie-info a {
+  color: black;
+  font-size: 15px;
+  font-weight: 200;
+  text-decoration: none;
+}
+
+.movie-img img{
+  width: 100%;
+}
