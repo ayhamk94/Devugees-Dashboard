@@ -2,14 +2,24 @@
   text-align: center;
 }
 .main {
-
-}
-.main h1 {
-  font-weight: lighter;
-}
-.widgets-container {
-  border-top: 1px solid #353535;
-  padding: 3rem;
+  margin-top: 2rem;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.widget-container {
+  display: flex;
+  flex-direction: row;
+  padding: .5rem;
+  animation-duration: 20s;
+  border-radius: .4rem;
+}
+
+@keyframes color-shift {
+  0% {border: 3px solid #F44336}
+  25% {border: 3px solid #2196F3}
+  50% {border: 3px solid #4CAF50}
+  75% {border: 3px solid #FFEB3B}
+  100% {border: 3px solid #F44336}
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import './weather.css';
-
+import MainInfo from './mainInfo'
 export default class Weather extends React.Component {
   constructor(props) {
     super(props);
@@ -17,15 +17,10 @@ export default class Weather extends React.Component {
   render() {
     const { data } = this.state;
     return (
-      <div>
+      <div style={{height: '100%'}}>
       {
         data.city ?
-        <div id="weather">
-          <img src={`./weatherIcons/${data.list[0].weather[0].icon}.svg`}></img>
-          <h1>{data.city.name}</h1>
-          <p>{data.list[0].weather[0].description}</p>
-          <p>{`${Math.round(data.list[0].main.temp)}°`}</p>
-        </div>
+        <MainInfo data={data}/>
         :
         <h1>
           loading...
