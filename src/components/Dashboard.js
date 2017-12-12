@@ -1,7 +1,7 @@
 import React from 'react';
-import Example from './widgets/example/example';
-import Widget from './mainComponents/Widget';
-import News from './widgets/news/news.js';
+import Example from '../widgets/example/example';
+import Widget from './Widget';
+import News from '../widgets/news/news.js';
 
 class Dashboard extends React.Component {
   render() {
