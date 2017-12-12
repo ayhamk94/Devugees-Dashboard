@@ -5,6 +5,7 @@ import Weather from '../widgets/weather/Weather';
 import Clock from '../widgets/clock/Clock';
 import Widget from './Widget';
 import Header from './Header';
+import Masonry from 'react-masonry-component';
 
 class Dashboard extends React.Component {
   render() {
@@ -20,14 +21,14 @@ class Dashboard extends React.Component {
             display:'flex',
             flexDirection:'column'
           }}>
-          <div className="widget-container">
+          <Masonry>
           <Widget>
             <Clock/>
           </Widget>
           <Widget>
             <Weather/>
           </Widget>
-          </div>
+        </Masonry>
         </Paper>
 
       </div>
