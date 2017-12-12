@@ -10,7 +10,6 @@ export default class Activity extends React.Component {
     const url = `https://api.github.com/repos/ayhamk94/Devugees-Dashboard/issues/events`;
     fetch(url).then( resp => resp.json()).then((activityData)=> {
       this.setState({ data:activityData});
-      console.log(this.state.data);
     })
   }
 
