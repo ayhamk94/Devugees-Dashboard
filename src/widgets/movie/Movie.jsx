@@ -9,8 +9,6 @@ import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import './movie.css'
 
-// https://api.themoviedb.org/3/movie/ID?KEY
-// alternative_titles,changes,credits,images,keywords,lists,releases,reviews,similar,translations,videos
 
 const url = 'https://api.themoviedb.org/3';
 const key = 'api_key=733712954fe242fa22a31638b23362b9';
@@ -50,7 +48,7 @@ export default class Movie extends Component {
     this.request();
   }
   request(){
-    getMovie("/movie/now_playing?" + "&").then(res => this.setState({ data: res.results }))
+    getMovie("/movie/now_playing?&").then(res => this.setState({ data: res.results }))
   }
   render() {
     const { data } = this.state

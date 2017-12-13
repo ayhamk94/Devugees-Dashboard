@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 
 const MainInfo = (props) => {
   const { data } = props;
@@ -17,5 +17,10 @@ const MainInfo = (props) => {
     </div>
   );
 };
+
+MainInfo.propTypes = {
+  data: PropTypes.object.isRequired,
+};
+
 
 export default MainInfo;
