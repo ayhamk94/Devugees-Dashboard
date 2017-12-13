@@ -14,10 +14,10 @@ const Dashboard = () =>
       <Paper
         zDepth={2}
         style={{
-            backgroundColor: '#EEEEEE',
+            backgroundColor: '#E0E0E0',
             borderRadius: '0.2rem',
             width: '80%',
-            padding: ' 0.5rem',
+            padding: ' 0.7rem',
             position: 'relative'
           }}
       >
