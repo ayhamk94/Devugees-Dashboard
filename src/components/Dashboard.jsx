@@ -4,6 +4,7 @@ import Masonry from 'react-masonry-component';
 import Weather from '../widgets/weather/Weather';
 import Activity from '../widgets/activity/Activity';
 import Clock from '../widgets/clock/Clock';
+import Trello from '../widgets/trello/Trello';
 import Notes from '../widgets/notes/Notes';
 import Movie from '../widgets/movie/Movie';
 import Widget from './Widget';
@@ -35,6 +36,8 @@ const Dashboard = () =>
           <Widget className="small">
             <Weather />
           </Widget>
+          <Widget className="small">
+            <Trello />
           <Widget className="medium">
             <Notes />
           </Widget>
