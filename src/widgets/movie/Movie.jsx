@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import axios from 'axios'
-import Spinner from '../../components/Spinner'
+import axios from 'axios';
+import Spinner from '../../components/Spinner';
 import PropTypes from 'prop-types';
 
 import { Carousel } from 'react-responsive-carousel';
@@ -10,20 +10,20 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import './movie.css'
 
 // https://api.themoviedb.org/3/movie/ID?KEY
-//alternative_titles,changes,credits,images,keywords,lists,releases,reviews,similar,translations,videos
+// alternative_titles,changes,credits,images,keywords,lists,releases,reviews,similar,translations,videos
 
-const url = 'https://api.themoviedb.org/3'
-const key = 'api_key=733712954fe242fa22a31638b23362b9'
+const url = 'https://api.themoviedb.org/3';
+const key = 'api_key=733712954fe242fa22a31638b23362b9';
 
-const img = (path, size = "original") => `http://image.tmdb.org/t/p/${size}${path}`
-const getMovie = (field, append) => axios.get(`${url}${field}${key}&append_to_response=${append}`).then(a => a.data)
+const img = (path, size = 'original') => `http://image.tmdb.org/t/p/${size}${path}`;
+const getMovie = (field, append) => axios.get(`${url}${field}${key}&append_to_response=${append}`).then(a => a.data);
 
 
 const ShowMovie = ({ data }) => (
   <div className="movie-wrapper">
     <div className="movie-img">
       <a href={`https://www.themoviedb.org/movie/${data.id}`}>
-        <img src={img(data.poster_path, "w500")} className="" alt=""/>
+        <img src={img(data.poster_path, 'w500')} className="" alt="" />
       </a>
     </div>
     <div className="movie-info">
@@ -33,21 +33,21 @@ const ShowMovie = ({ data }) => (
       <a href={`https://www.themoviedb.org/movie/${data.id}`}>More info</a>
     </div>
   </div>
-)
+);
 
 ShowMovie.propTypes = {
   data: PropTypes.object.isRequired,
-}
+};
 
 export default class Movie extends Component {
-  constructor(){
-    super()
+  constructor() {
+    super();
     this.state = {
       data: []
-    }
+    };
   }
-  componentDidMount(){
-    this.request()
+  componentDidMount() {
+    this.request();
   }
   request(){
     getMovie("/movie/now_playing?" + "&").then(res => this.setState({ data: res.results }))
@@ -75,6 +75,6 @@ export default class Movie extends Component {
           </Carousel>
         }
       </div>
-    )
+    );
   }
 }

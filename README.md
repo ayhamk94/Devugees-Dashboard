@@ -1,5 +1,5 @@
 # DEVUGEES  Dashboard
-###This a simple dashboard page using [React](https://reactjs.org/) and [Material-UI](http://www.material-ui.com/#/) with modular layout to add widgets as react components.
+### This a simple dashboard page using [React](https://reactjs.org/) and [Material-UI](http://www.material-ui.com/#/) with modular layout to add widgets as react components.
 
 
 ## Setting up
@@ -86,3 +86,4 @@ class Example extends React.Component {
 export default Example;
 
 ```
+### Use jsx  and not js as file extenion
