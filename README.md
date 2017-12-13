@@ -38,6 +38,12 @@ or
 
 ## Style Guide
 #### In the dashboard component add your Widget to the dashboard inside the Widget component like this.
+#### Make sure you set the size for your widget and design it according to your size
+#### class `big` give the widget `width: 100%`
+#### class `medium` give the widget `width: 50%`
+#### class `small` give the widget `width: 25%`
+
+
 ``` jsx
 import React from 'react';
 import Example from './widgets/example/example';
@@ -51,13 +57,13 @@ class Dashboard extends React.Component {
           DEVUGEES DASHBOARD
         </h1>
         <div className="widgets-container">
-          <Widget>
+          <Widget className="big">
             <Example/>
           </Widget>
-          <Widget>
+          <Widget className="small">
             <News/>
           </Widget>
-          <Widget>
+          <WidgetclassName="medium">
             <Clocks/>
           </Widget>
         </div>

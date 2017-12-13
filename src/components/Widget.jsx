@@ -6,9 +6,9 @@ const Widget = props => (
 
   <Paper
     zDepth={1}
+    className={props.className}
     style={{
       padding: '1rem',
-      margin: '0.3rem',
       borderRadius: '0.2rem',
     }}
   >

@@ -18,24 +18,23 @@ const Dashboard = () =>
             borderRadius: '0.2rem',
             width: '80%',
             padding: ' 0.5rem',
-            display: 'flex',
-            flexDirection: 'column'
+            position: 'relative'
           }}
       >
-        <Masonry>
-          <Widget>
-            <Clock />
-          </Widget>
-          <Widget>
-            <Weather />
-          </Widget>
-          <Widget>
+        <div style={{ display: 'flex', justifyContent: 'flex-start', flexWrap: 'wrap' }}>
+          <Widget className="medium" >
             <Movie />
           </Widget>
-          <Widget>
+          <Widget className="medium" >
             <Activity />
           </Widget>
-        </Masonry>
+          <Widget className="small" >
+            <Clock />
+          </Widget>
+          <Widget className="small">
+            <Weather />
+          </Widget>
+        </div>
       </Paper>
     </div>
 
