@@ -3,6 +3,10 @@ import axios from 'axios'
 import Spinner from '../../components/Spinner'
 import PropTypes from 'prop-types';
 
+import { Carousel } from 'react-responsive-carousel';
+
+
+import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import './movie.css'
 
 // https://api.themoviedb.org/3/movie/ID?KEY
@@ -46,16 +50,29 @@ export default class Movie extends Component {
     this.request()
   }
   request(){
-    getMovie("/movie/now_playing?" + "&").then(res => this.setState({ data: res.results[0] }))
+    getMovie("/movie/now_playing?" + "&").then(res => this.setState({ data: res.results }))
   }
   render() {
     const { data } = this.state
+    const settings = {
+      showStatus: false,
+      width: '500px',
+      showIndicators: false,
+      useKeyboardArrows: true,
+      autoPlay: true,
+      interval: 10000,
+      stopOnHover: true,
+      transitionTime: 500,
+      emulateTouch: true
+    }
     return (
-      <div>
+      <div className="movie-main">
         {
           data && data.length === 0 ?
           <Spinner /> :
-          <ShowMovie data={data} />
+          <Carousel {...settings}>
+            {data.map((movie, i) => <ShowMovie key={i} data={movie} />)}
+          </Carousel>
         }
       </div>
     )
