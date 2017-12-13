@@ -63,7 +63,7 @@ class Dashboard extends React.Component {
           <Widget className="small">
             <News/>
           </Widget>
-          <WidgetclassName="medium">
+          <Widget className="medium">
             <Clocks/>
           </Widget>
         </div>
