@@ -24,7 +24,7 @@ const Dashboard = () =>
       >
         <div style={{ display: 'flex', justifyContent: 'flex-start', flexWrap: 'wrap' }}>
           <Widget className="medium" >
-            <Movie autoPlay={false}/>
+            <Movie autoPlay={false} />
           </Widget>
           <Widget className="medium" >
             <Activity />
@@ -37,6 +37,7 @@ const Dashboard = () =>
           </Widget>
           <Widget className="small">
             <Trello />
+          </Widget>
           <Widget className="medium">
             <Notes />
           </Widget>
