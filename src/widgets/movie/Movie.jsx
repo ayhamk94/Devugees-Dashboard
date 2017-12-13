@@ -63,7 +63,8 @@ export default class Movie extends Component {
       interval: 10000,
       stopOnHover: true,
       transitionTime: 500,
-      emulateTouch: true
+      emulateTouch: true,
+      infiniteLoop: true
     }
     return (
       <div className="movie-main">
