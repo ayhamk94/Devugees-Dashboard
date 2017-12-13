@@ -7,7 +7,9 @@ import Trello from '../widgets/trello/Trello';
 import Notes from '../widgets/notes/Notes';
 import Movie from '../widgets/movie/Movie';
 import Decider from '../widgets/decider/Decider';
+import News from '../widgets/news/News';
 import Widget from './Widget';
+
 
 
 const Dashboard = () =>
@@ -37,6 +39,7 @@ const Dashboard = () =>
             <Weather />
           </Widget>
           <Widget className="small">
+
             <Trello />
           </Widget>
           <Widget className="medium">
@@ -45,6 +48,10 @@ const Dashboard = () =>
           <Widget className="medium">
             <Decider />
           </Widget>
+          <Widget className="medium">
+            <News />
+          </Widget>
+
         </div>
       </Paper>
     </div>
