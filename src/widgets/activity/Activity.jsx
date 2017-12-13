@@ -22,7 +22,7 @@ export default class Activity extends React.Component {
     return (
       <div className="activity">
         <h1>Github Activity</h1>
-        <List>
+        <List style={{ backgroundColor: '#E0E0E0' }}>
           {
             data.length > 1 ?
 

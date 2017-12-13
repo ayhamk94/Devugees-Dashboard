@@ -12,7 +12,7 @@ const events = {
 const CardExampleExpandable = (props) => {
   const { actor, payload, type } = props.activity;
   return (
-    <Card style={{ margin: '10px' }}>
+    <Card style={{ margin: '10px', borderRadius: '0.2rem', }}>
       <CardHeader
         title={actor.display_login}
         subtitle={events[type]}
