@@ -1,3 +1,8 @@
+.movie-main li.slide {
+  background: white;
+  max-height: 300px
+}
+
 .movie-wrapper {
   display: flex;
   width: 500px;
@@ -16,15 +21,22 @@
 }
 
 .movie-info h1 {
+  font-weight: 200;
+  font-size: 28px;
+  width: 100%;
   margin: 0
 }
 
 .movie-info p {
+  line-height: 1.2em;
+  padding: 6px 0;
+  overflow: auto;
+  max-height: 160px;
   flex: 2;
   font-size: 15px;
   font-weight: 200;
   border-bottom: 1px solid lightgray;
-  padding-bottom: 6px;
+  margin-bottom: 6px;
 }
 
 .movie-info a {
@@ -33,6 +45,12 @@
   font-weight: 200;
   text-decoration: none;
 }
+
+.movie-info a:hover {
+  color: gray;
+}
+
+
 
 .movie-img img{
   width: 100%;
