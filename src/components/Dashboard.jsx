@@ -4,6 +4,7 @@ import Masonry from 'react-masonry-component';
 import Weather from '../widgets/weather/Weather';
 import Activity from '../widgets/activity/Activity';
 import Clock from '../widgets/clock/Clock';
+import Notes from '../widgets/notes/Notes';
 import Movie from '../widgets/movie/Movie';
 import Widget from './Widget';
 
@@ -23,7 +24,7 @@ const Dashboard = () =>
       >
         <div style={{ display: 'flex', justifyContent: 'flex-start', flexWrap: 'wrap' }}>
           <Widget className="medium" >
-            <Movie />
+            <Movie autoPlay={false}/>
           </Widget>
           <Widget className="medium" >
             <Activity />
@@ -33,6 +34,9 @@ const Dashboard = () =>
           </Widget>
           <Widget className="small">
             <Weather />
+          </Widget>
+          <Widget className="medium">
+            <Notes />
           </Widget>
         </div>
       </Paper>
