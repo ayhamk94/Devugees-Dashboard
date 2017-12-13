@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.17.1",
     "material-ui": "^0.20.0",
+    "moment": "^2.19.4",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-masonry-component": "^6.0.1",

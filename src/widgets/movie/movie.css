@@ -1,11 +1,19 @@
+.movie-main {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .movie-main li.slide {
   background: white;
-  max-height: 300px
+  max-height: 300px;
 }
 
 .movie-wrapper {
   display: flex;
-  width: 500px;
 }
 
 .movie-img {

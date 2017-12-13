@@ -71,22 +71,24 @@ export default class Clock extends Component {
       day, month, date, year
     } = this.state;
 
-    return [
-      <div className="clock-wrapper" key="clock">
-        <div className="clock-face">
-          <div className="clock hour" ref={hour => this.hour = hour} />
-          <div className="clock min" ref={min => this.min = min} />
-          <div className="clock second" ref={sec => this.sec = sec} />
+    return (
+      <div className="clock-main">
+        <div className="clock-wrapper" key="clock">
+          <div className="clock-face">
+            <div className="clock hour" ref={hour => this.hour = hour} />
+            <div className="clock min" ref={min => this.min = min} />
+            <div className="clock second" ref={sec => this.sec = sec} />
+          </div>
         </div>
-      </div>,
-      <div className="date" key="date">
-        <span className="day">{day.toUpperCase()}</span>
-        <div>
-          <span className="date">{date} </span>
-          <span className="month">{month.toUpperCase()} </span>
-          <span className="year">{year} </span>
+        <div className="date" key="date">
+          <span className="day">{day.toUpperCase()}</span>
+          <div style={{textAlign: "center"}}>
+            <span className="date">{date} </span>
+            <span className="month">{month.toUpperCase()} </span>
+            <span className="year">{year} </span>
+          </div>
         </div>
       </div>
-    ];
+    )
   }
 }

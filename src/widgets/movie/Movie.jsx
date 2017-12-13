@@ -57,7 +57,7 @@ export default class Movie extends Component {
       width: '500px',
       showIndicators: false,
       useKeyboardArrows: true,
-      autoPlay: true,
+      autoPlay: this.props.autoPlay || false,
       interval: 10000,
       stopOnHover: true,
       transitionTime: 500,
@@ -77,3 +77,7 @@ export default class Movie extends Component {
     );
   }
 }
+
+Movie.propTypes = {
+  autoPlay: PropTypes.bool,
+};
