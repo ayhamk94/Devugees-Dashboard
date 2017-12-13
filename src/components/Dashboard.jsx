@@ -34,13 +34,6 @@ const Dashboard = () =>
           <Widget className="small">
             <Weather />
           </Widget>
-          <Widget className="small">
-            <Weather />
-          </Widget>
-          <Widget className="small">
-            <Weather />
-          </Widget>
-
         </div>
       </Paper>
     </div>
