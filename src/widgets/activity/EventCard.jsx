@@ -3,6 +3,7 @@ import { Card, CardActions, CardHeader, CardText } from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 import {List, ListItem} from 'material-ui/List';
 import ContentInbox from 'material-ui/svg-icons/content/inbox';
+import ContentAdd from 'material-ui/svg-icons/content/add';
 const events = {
   PullRequestEvent: 'Pull Request',
   PushEvent: 'Pushed',
@@ -30,7 +31,7 @@ const CardExampleExpandable = (props) => {
             : payload.pull_request?
                 <ListItem primaryText={payload.pull_request.title} leftIcon={<ContentInbox />} />
             : payload.ref_type?
-                <ListItem primaryText={payload.ref} leftIcon={<ContentInbox />} />
+                <ListItem primaryText={payload.ref} leftIcon={<ContentAdd />} />
             :
 
             <div>
