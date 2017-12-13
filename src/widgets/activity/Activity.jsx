@@ -1,6 +1,7 @@
 import React from 'react';
 import './activity.css';
 import MainInfo from './mainInfo';
+import Spinner from '../../components/Spinner';
 
 export default class Activity extends React.Component {
   constructor(props) {
@@ -17,17 +18,18 @@ export default class Activity extends React.Component {
   render() {
     const { data } = this.state;
     return (
-      <div className="activity" >
-        <h1>THE TOMMY WIDGET</h1>
-        <h3>github recent activity</h3>
-        <ul style={{ height: '100%' }}>
+      <div className="activity">
+        <h1>Github activity</h1>
+        <div class="header">
+          <h3>User:</h3><h3>Event:</h3>
+        </div>
+        <ul class="m-0">
           {
             data.length > 1 ?
+
             data.map((data, i) => <MainInfo key={i} data={data} />)
             :
-            <li>
-              <h1> loading...  </h1>
-            </li>
+            <Spinner/>
           }
         </ul>
       </div>
