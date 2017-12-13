@@ -1,7 +1,8 @@
 import React from 'react';
-import './activity.css';
-import MainInfo from './mainInfo';
+import { List, ListItem } from 'material-ui/List';
 import Spinner from '../../components/Spinner';
+import './activity.css';
+import EventCard from './EventCard';
 
 export default class Activity extends React.Component {
   constructor(props) {
@@ -9,9 +10,10 @@ export default class Activity extends React.Component {
     this.state = { data: {} };
   }
   componentDidMount() {
-    const url = 'https://api.github.com/repos/ayhamk94/Devugees-Dashboard/issues/events';
+    const url = 'https://api.github.com/repos/ayhamk94/Devugees-Dashboard/events';
     fetch(url).then(resp => resp.json()).then((activityData) => {
       this.setState({ data: activityData });
+      console.log(this.state.data);
     });
   }
 
@@ -19,19 +21,16 @@ export default class Activity extends React.Component {
     const { data } = this.state;
     return (
       <div className="activity">
-        <h1>Github activity</h1>
-        <div className="header">
-          <h3>User:</h3><h3>Event:</h3>
-        </div>
-        <ul className="m-0">
+        <h1>Github Activity</h1>
+        <List style={{ backgroundColor: '#E0E0E0' }}>
           {
             data.length > 1 ?
 
-            data.map((data, i) => <MainInfo key={i} data={data} />)
+            data.map(activity => <EventCard key={activity.id} activity={activity} />)
             :
-            <Spinner/>
+            <Spinner />
           }
-        </ul>
+        </List>
       </div>
     );
   }
