@@ -20,10 +20,10 @@ export default class Activity extends React.Component {
     return (
       <div className="activity">
         <h1>Github activity</h1>
-        <div class="header">
+        <div className="header">
           <h3>User:</h3><h3>Event:</h3>
         </div>
-        <ul class="m-0">
+        <ul className="m-0">
           {
             data.length > 1 ?
 
