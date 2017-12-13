@@ -26,7 +26,7 @@ const Dashboard = () =>
           <Widget className="medium" >
             <Movie autoPlay={false} />
           </Widget>
-          <Widget className="medium" >
+          <Widget className="small" >
             <Activity />
           </Widget>
           <Widget className="small" >

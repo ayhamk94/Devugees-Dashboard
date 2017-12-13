@@ -1,5 +1,5 @@
 import React from 'react';
-import { List, ListItem } from 'material-ui/List';
+import { List } from 'material-ui/List';
 import Spinner from '../../components/Spinner';
 import './activity.css';
 import EventCard from './EventCard';
@@ -13,7 +13,7 @@ export default class Activity extends React.Component {
     const url = 'https://api.github.com/repos/ayhamk94/Devugees-Dashboard/events';
     fetch(url).then(resp => resp.json()).then((activityData) => {
       this.setState({ data: activityData });
-      console.log(this.state.data);
+      // console.log(this.state.data);
     });
   }
 
@@ -21,8 +21,8 @@ export default class Activity extends React.Component {
     const { data } = this.state;
     return (
       <div className="activity">
-        <h1>Github Activity</h1>
-        <List style={{ backgroundColor: '#E0E0E0' }}>
+        <h4>{data[0] ? data[0].repo.name.slice(9, data[0].repo.name.length) : <Spinner />}</h4>
+        <List>
           {
             data.length > 1 ?
 
