@@ -2,17 +2,15 @@
   margin: 0;
 }
 .activity ul{
-  height: 300px;
   margin-bottom: 0;
   overflow: hidden;
   overflow-y: scroll;
   padding: 0;
-  list-style: none;
 }
 .activity h3{
   margin: 0
 }
 .activity ul li, .activity .header{
-  display: flex; 
+  display: flex;
   justify-content: space-between;
 }

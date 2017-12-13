@@ -10,6 +10,7 @@ const Widget = props => (
     style={{
       padding: '1rem',
       borderRadius: '0.2rem',
+      overflowY: 'auto'
     }}
   >
     {props.children}
