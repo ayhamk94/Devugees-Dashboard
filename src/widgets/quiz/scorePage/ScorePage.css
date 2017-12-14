@@ -1,0 +1,9 @@
+.container {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#scoreText {
+  font-size: 3em;
+  text-shadow: 2px 1px 7px #800000;
+}
