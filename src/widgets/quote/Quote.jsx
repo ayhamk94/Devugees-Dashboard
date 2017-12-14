@@ -18,14 +18,14 @@ export default class Quote extends React.Component {
     var req = new Request(url);
     fetch(req).then((response) => {
       response.json().then(data => {
-    //    console.log('data: ', data)
+        //    console.log('data: ', data)
         let quotes = data.contents.quotes[0];
         let quote = quotes.quote;
         let author = quotes.author;
         this.setState({quote, author});
 
       }).catch((err) => {
-      //  console.log('Err: ', err);
+        //  console.log('Err: ', err);
       });
     })
   }
@@ -34,15 +34,19 @@ export default class Quote extends React.Component {
     const {quote, author} = this.state;
 
     return (<div>
-      <div className="blockquote">
-        <p className="quotation-mark opening">&ldquo;</p>
-        <h3 className="quote">{quote}</h3>
-        <p className="quotation-mark closing">
-          &rdquo;</p>
-        <hr/>
-        <p className="author">{author}</p>
-      </div>
-    </div>)
+      {
+        quote.length == 0 && author.length == 0
+          ? <Spinner/>
+          : <div className="blockquote">
+            <p className="quotation-mark opening">&ldquo;</p>
+            <h3 className="quote">{quote}</h3>
+            <p className="quotation-mark closing">
+              &rdquo;</p>
+            <hr/>
+            <p className="author">{author}</p>
+          </div>
+          }
+        </div>)
 
-  }
+      }
 }
