@@ -1,5 +1,4 @@
 import React from 'react';
-import TextField from 'material-ui/TextField';
 import Slider from 'react-slick';
 import Spinner from '../../components/Spinner';
 import './news.css';
