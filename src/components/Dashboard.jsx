@@ -48,7 +48,7 @@ const Dashboard = () =>
           <Widget className="medium">
             <Decider />
           </Widget>
-          <Widget className="medium">
+          <Widget className="small">
             <News />
           </Widget>
 

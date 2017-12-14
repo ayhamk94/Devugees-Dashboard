@@ -13,7 +13,7 @@ export default class News extends React.Component {
   }
 
   componentDidMount() {
-    var url = 'https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=7254920ef5694ef2a9295aad66f86c15';
+    var url = 'https://newsapi.org/v2/top-headlines?sources=ars-technica&apiKey=7254920ef5694ef2a9295aad66f86c15';
     var req = new Request(url);
 
     fetch(req).then((response) => {
@@ -28,9 +28,9 @@ export default class News extends React.Component {
 
     const listNewsArticles = articles.map((article) =>
     <div className="articles">
-      <h2 >{article.author}
+      <h2 >{!article.author? 'Ars Technica' : article.author}
       </h2>
-      <img className="news-logo" src="https://ichef-1.bbci.co.uk/news/1024/cpsprodpb/A4CA/production/_97668124_p01tlf61.jpg" alt="bbc-news"></img>
+      <img className="news-logo" src={article.urlToImage} alt="news"></img>
       <h3 className= "text-title">{article.title}
       </h3>
       <p className="description" >{article.description}
@@ -41,7 +41,7 @@ export default class News extends React.Component {
     </div>);
     return listNewsArticles;
   }
-//https://quotes.rest/
+
   render() {
     const {articles}  = this.state;
     var settings = {
@@ -52,10 +52,8 @@ export default class News extends React.Component {
       slidesToScroll: 1,
       autoplaySpeed: 10000
     };
-    console.log(articles)
     return (<div>
-      <Slider {...settings} arrows={false} autoplay={true} className="slider">{this.articlesList(articles)}</Slider>
-      <TextField/>
+      <Slider {...settings} arrows={false} autoplay={true} className="slider-news">{this.articlesList(articles)}</Slider>
     </div>)
   }
 
