@@ -7,7 +7,9 @@ import Trello from '../widgets/trello/Trello';
 import Notes from '../widgets/notes/Notes';
 import Movie from '../widgets/movie/Movie';
 import Decider from '../widgets/decider/Decider';
+import News from '../widgets/news/News';
 import Widget from './Widget';
+
 
 
 const Dashboard = () =>
@@ -27,6 +29,7 @@ const Dashboard = () =>
           <Widget className="medium" >
             <Movie autoPlay={false} />
           </Widget>
+
           <Widget className="small" >
             <Activity />
           </Widget>
@@ -45,6 +48,10 @@ const Dashboard = () =>
           <Widget className="medium">
             <Decider />
           </Widget>
+          <Widget className="small">
+            <News />
+          </Widget>
+
         </div>
       </Paper>
     </div>
