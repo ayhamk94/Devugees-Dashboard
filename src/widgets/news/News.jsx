@@ -31,19 +31,19 @@ export default class News extends React.Component {
       <h2 >{article.author}
       </h2>
       <img className="news-logo" src="https://ichef-1.bbci.co.uk/news/1024/cpsprodpb/A4CA/production/_97668124_p01tlf61.jpg" alt="bbc-news"></img>
-      <h3 >{article.title}
+      <h3 className= "text-title">{article.title}
       </h3>
-      <span className="description" >{article.description}
-      </span>
+      <p className="description" >{article.description}
+      </p>
       <a href={article.url}>
         <i>More info...</i>
       </a>
     </div>);
     return listNewsArticles;
   }
-
+//https://quotes.rest/
   render() {
-    const articles = this.state.articles;
+    const {articles}  = this.state;
     var settings = {
       dots: false,
       infinite: true,

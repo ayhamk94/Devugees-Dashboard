@@ -1,15 +1,32 @@
-
+.slider{
+  margin:0;
+}
 .slider .articles{
-  max-height: 320px;
-  line-height: 1.2em;
-  font-weight: 200;
+  max-height: 350px;
+  line-height:1.2em;
+  font-weight: normal;
+  overflow: auto;
+
+
+}
+.slider.description{
+      font-size: 12px;
+  }
+.text-title{
+  font-weight:500 !important;
+}
+
+.medium div input {
+  display: none !important;
+
 }
 
 .slider a {
   color: red;
-  font-size: 15px;
   font-weight: 200;
   text-decoration: none;
+  -webkit-transition: color .3 ease;
+  transition: color .3s ease;
 }
 .slider a :hover{
   color: #636365;
@@ -17,6 +34,6 @@
 
 .news-logo{
   position:relative;
-  width: 50%;
-  left: 25%;
+  width: 30%;
+  left: 35%;
 }

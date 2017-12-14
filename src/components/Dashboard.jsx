@@ -29,6 +29,7 @@ const Dashboard = () =>
           <Widget className="medium" >
             <Movie autoPlay={false} />
           </Widget>
+
           <Widget className="small" >
             <Activity />
           </Widget>
@@ -39,7 +40,6 @@ const Dashboard = () =>
             <Weather />
           </Widget>
           <Widget className="small">
-
             <Trello />
           </Widget>
           <Widget className="medium">
