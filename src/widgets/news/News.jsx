@@ -1,6 +1,7 @@
 import React from 'react';
 import TextField from 'material-ui/TextField';
 import Slider from 'react-slick';
+import Spinner from '../../components/Spinner';
 import './news.css';
 
 export default class News extends React.Component {
@@ -27,7 +28,7 @@ export default class News extends React.Component {
   articlesList(articles) {
 
     const listNewsArticles = articles.map((article) =>
-    <div className="articles">
+    <div key={article.title} className="articles">
       <h2 >{!article.author? 'Ars Technica' : article.author}
       </h2>
       <img className="news-logo" src={article.urlToImage} alt="news"></img>
@@ -53,7 +54,8 @@ export default class News extends React.Component {
       autoplaySpeed: 10000
     };
     return (<div>
-      <Slider {...settings} arrows={false} autoplay={true} className="slider-news">{this.articlesList(articles)}</Slider>
+      {articles.length == 0 ? <Spinner /> :
+      <Slider {...settings} arrows={false} autoplay={true} className="slider-news">{this.articlesList(articles)}</Slider>}
     </div>)
   }
 

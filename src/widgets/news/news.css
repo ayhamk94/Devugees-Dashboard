@@ -1,6 +1,7 @@
 .slider-news {
   top:15px;
   margin: 0;
+  left:10px;
   text-align: center;
 }
 
@@ -9,7 +10,7 @@
   line-height: 1.2em;
   font-weight: normal;
   overflow: auto;
-  
+
 }
 
 .slider-news.description {
