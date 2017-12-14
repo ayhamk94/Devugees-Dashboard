@@ -1,16 +1,20 @@
-.activity h4 {
+.github-activity h4 {
   margin: 0;
 }
-.activity ul{
+.github-activity ul{
   margin-bottom: 0;
   overflow: hidden;
   overflow-y: scroll;
   padding: 0;
 }
-.activity h3{
+.github-activity h3{
   margin: 0
 }
-.activity ul li, .activity .header{
-  display: flex;
-  justify-content: space-between;
+
+
+
+.list-item {
+  padding: 15px;
+  border: 1px solid #e6e6e6;
+  box-sizing: border-box;
 }

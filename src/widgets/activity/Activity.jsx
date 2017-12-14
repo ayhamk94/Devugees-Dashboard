@@ -20,7 +20,7 @@ export default class Activity extends React.Component {
   render() {
     const { data } = this.state;
     return (
-      <div className="activity">
+      <div className="github-activity">
         <h4>{data[0] ? data[0].repo.name.slice(9, data[0].repo.name.length) : <Spinner />}</h4>
         <List>
           {
