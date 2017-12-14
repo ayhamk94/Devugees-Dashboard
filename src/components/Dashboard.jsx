@@ -6,6 +6,7 @@ import Clock from '../widgets/clock/Clock';
 import Trello from '../widgets/trello/Trello';
 import Notes from '../widgets/notes/Notes';
 import Movie from '../widgets/movie/Movie';
+import Decider from '../widgets/decider/Decider';
 import Widget from './Widget';
 
 
@@ -40,6 +41,9 @@ const Dashboard = () =>
           </Widget>
           <Widget className="medium">
             <Notes />
+          </Widget>
+          <Widget className="medium">
+            <Decider />
           </Widget>
         </div>
       </Paper>
