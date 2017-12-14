@@ -7,6 +7,7 @@ import Trello from '../widgets/trello/Trello';
 import Notes from '../widgets/notes/Notes';
 import Movie from '../widgets/movie/Movie';
 import Decider from '../widgets/decider/Decider';
+import Schedule from '../widgets/schedule/Schedule';
 import Widget from './Widget';
 
 
@@ -24,7 +25,7 @@ const Dashboard = () =>
           }}
       >
         <div style={{ display: 'flex', justifyContent: 'flex-start', flexWrap: 'wrap' }}>
-          <Widget className="medium" >
+          {/* <Widget className="medium" >
             <Movie autoPlay={false} />
           </Widget>
           <Widget className="small" >
@@ -35,8 +36,11 @@ const Dashboard = () =>
           </Widget>
           <Widget className="small">
             <Weather />
-          </Widget>
+          </Widget>  */}
           <Widget className="small">
+            <Schedule />
+          </Widget>
+          {/* <Widget className="small">
             <Trello />
           </Widget>
           <Widget className="medium">
@@ -44,7 +48,7 @@ const Dashboard = () =>
           </Widget>
           <Widget className="medium">
             <Decider />
-          </Widget>
+          </Widget> */}
         </div>
       </Paper>
     </div>
