@@ -22,17 +22,6 @@ export default class Activity extends React.Component {
     fetch(url).then(resp => resp.json()).then((activityData) => {
       this.setState({ data: activityData, open: true });
     });
-    //const { title, text } = this.state
-    //const data = this.props.data
-
-    //const error = this.validate(title, text)
-    //if (error) return
-
-    //data.unshift({ title, text, created: Date.now() })
-
-    //localStorage.setItem(`post-db`, JSON.stringify(data))
-    //this.props.addPost()
-    //this.handleExpand(false)
   }
 
   render() {

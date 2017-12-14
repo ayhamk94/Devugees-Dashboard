@@ -45,7 +45,7 @@ const Dashboard = () =>
           <Widget className="medium">
             <Notes />
           </Widget>
-          <Widget className="medium">
+          <Widget className="small">
             <Decider />
           </Widget>
           <Widget className="small">
