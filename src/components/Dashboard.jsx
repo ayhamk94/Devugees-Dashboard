@@ -8,6 +8,7 @@ import Notes from '../widgets/notes/Notes';
 import Movie from '../widgets/movie/Movie';
 import Decider from '../widgets/decider/Decider';
 import News from '../widgets/news/News';
+import Quote from '../widgets/quote/Quote';
 import Widget from './Widget';
 
 
@@ -50,6 +51,9 @@ const Dashboard = () =>
           </Widget>
           <Widget className="small">
             <News />
+          </Widget>
+          <Widget className="small">
+            <Quote />
           </Widget>
 
         </div>
