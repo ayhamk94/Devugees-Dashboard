@@ -1,16 +1,7 @@
-.activity h4 {
+.github-activity h4 {
+  font-weight: 200;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 1.4rem;
   margin: 0;
-}
-.activity ul{
-  margin-bottom: 0;
-  overflow: hidden;
-  overflow-y: scroll;
-  padding: 0;
-}
-.activity h3{
-  margin: 0
-}
-.activity ul li, .activity .header{
-  display: flex;
-  justify-content: space-between;
 }
