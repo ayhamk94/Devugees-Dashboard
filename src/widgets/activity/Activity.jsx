@@ -1,8 +1,10 @@
 import React from 'react';
 import { List } from 'material-ui/List';
+import CircularProgress from 'material-ui/CircularProgress';
 import Spinner from '../../components/Spinner';
 import './activity.css';
 import EventCard from './EventCard';
+import Divider from 'material-ui/Divider';
 
 export default class Activity extends React.Component {
   constructor(props) {
@@ -21,14 +23,20 @@ export default class Activity extends React.Component {
     const { data } = this.state;
     return (
       <div className="github-activity">
-        <h4>{data[0] ? data[0].repo.name.slice(9, data[0].repo.name.length) : <Spinner />}</h4>
+        <h3>{data[0] ? data[0].repo.name.slice(9, data[0].repo.name.length) : <Spinner />}</h3>
+        <Divider />
         <List>
           {
             data.length > 1 ?
 
-            data.map(activity => <EventCard key={activity.id} activity={activity} />)
+            data.map((activity) => {
+              if (activity.type === 'PullRequestEvent' || activity.type === 'CreateEvent') {
+                return <EventCard key={activity.id} activity={activity} />;
+              }
+                return null;
+              })
             :
-            <Spinner />
+            <CircularProgress />
           }
         </List>
       </div>

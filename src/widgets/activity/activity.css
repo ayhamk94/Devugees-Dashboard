@@ -1,20 +1,7 @@
 .github-activity h4 {
+  font-weight: 200;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 1.4rem;
   margin: 0;
-}
-.github-activity ul{
-  margin-bottom: 0;
-  overflow: hidden;
-  overflow-y: scroll;
-  padding: 0;
-}
-.github-activity h3{
-  margin: 0
-}
-
-
-
-.list-item {
-  padding: 15px;
-  border: 1px solid #e6e6e6;
-  box-sizing: border-box;
 }
