@@ -1,0 +1,52 @@
+.blockquote {
+  border-left: none;
+  top: 100px;
+  position: relative;
+}
+
+.quotation-mark {
+  position: absolute;
+  font-weight: bold;
+  font-size: 12em;
+  user-select: none;
+  color: #d4d4d4;
+  font-family: "Times New Roman", Georgia, Serif;
+  z-index: 0;
+}
+
+.quotation-mark.opening {
+  top: -270px;
+}
+
+.quotation-mark.closing {
+  right: 0px;
+  top: -200px;
+}
+
+.quote {
+  position: relative;
+  z-index: 10;
+  user-select: none;
+}
+
+.blockquote hr {
+  top: 50px;
+  height: 0.5px;
+  width: 30%;
+  background-color: #d4d4d4;
+}
+
+.blockquote p {
+  user-select: none;
+}
+
+.author {
+  color: red;
+  -webkit-transition: color .3 ease;
+  transition: color .3s ease;
+  text-align: center;
+}
+
+.author:hover {
+  color: #636365;
+}
