@@ -20,14 +20,16 @@ const Dashboard = () =>
         style={{
             backgroundColor: '#E0E0E0',
             borderRadius: '0.2rem',
-            width: '80%',
+            width: '80vw',
+            maxHeight: '90vh',
+            overflowY: 'scroll',
             padding: ' 0.7rem',
             position: 'relative'
           }}
       >
         <div style={{ display: 'flex', justifyContent: 'flex-start', flexWrap: 'wrap' }}>
           <Widget className="medium" >
-            <Movie autoPlay={false} />
+            <Movie autoPlay={true} />
           </Widget>
 
           <Widget className="medium" >

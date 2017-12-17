@@ -80,7 +80,7 @@ export default class Clock extends Component {
             <div className="clock second" ref={sec => this.sec = sec} />
           </div>
         </div>
-        <div className="date" key="date">
+        <div style={{textAlign: "center"}} className="date" key="date">
           <span className="day">{day.toUpperCase()}</span>
           <div style={{textAlign: "center"}}>
             <span className="date">{date} </span>
