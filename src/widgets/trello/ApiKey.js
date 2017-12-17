@@ -100,7 +100,8 @@ class ApiKey extends React.Component {
         onExpandChange={e => this.handleExpand(e)}
         key="card" style={{boxShadow: "0 0"}}>
         <CardHeader
-          api_key="Create note"
+          title="Settings"
+          titleStyle={{padding: 0}}
           actAsExpander={true}
           showExpandableButton={true}
           style={{textAlign: 'left'}}

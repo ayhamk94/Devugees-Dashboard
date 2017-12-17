@@ -6,7 +6,6 @@ import MainInfo from './mainInfo';
 import Spinner from '../../components/Spinner';
 import ApiKey from './ApiKey';
 import { List, ListItem } from 'material-ui/List';
-import {cyan100, lightBlack} from 'material-ui/styles/colors';
 
 export default class Activity extends React.Component {
   constructor(props) {
@@ -47,52 +46,37 @@ export default class Activity extends React.Component {
     }
   }
   render() {
+    const style = {
+      padding: 0,
+      textAlign: 'left',
+      height: '100%',
+      display: "flex",
+      flexDirection: "column",
+      position: "relative"
+    }
     const { trello } = this.state;
     return (
-      <div className="activity">
+      <div className="trello-widget">
         <h1>Trello</h1>
 
-        { console.log(trello) }
-        { trello && (
-          <ApiKey data={[ trello ]} addTrelloInfo={this.handleData}/>
-        )}
             
-      <div className="header">
-        <h3>Board:</h3><h3>List:</h3>
-      </div>
-
-      <ul className="m-0">
+      <List style={style}>
+        { trello && (
+          <ListItem containerElement={<ApiKey data={[ trello ]} addTrelloInfo={this.handleData}/>}/>
+        )}
       {
         trello && trello.length !== 0 ?
 
         <div>
           {trello.map(list => (
-          <div key={`${list.created}`}>
-            <ListItem
-              primaryTogglesNestedList={true}
-              autoGenerateNestedIndicator={false}
-              primaryText={
-              <div>
-                <div style={{fontSize: "18px", fontWeight: 200}}>{list.name}</div>
-                <div style={{color: lightBlack, fontSize: "0.7em"}}>
-                  {list.cards.length}
-              </div>
-              </div>
-              }
-              nestedItems= {list.cards.map(p => (
-                <ListItem style={{whiteSpace: "pre-wrap", fontSize: "14px", fontWeight: 400}} disabled={true} key={p.id} primaryText={p.name}/>
-                ))}
-              
-              hoverColor={cyan100}
-              />
-            </div>
+            <MainInfo key={list.id} list={list} />
           ))}
-          </div>
+        </div>
 
           :
           <Spinner/>
       }
-    </ul>
+    </List>
   </div>
     );
   }
