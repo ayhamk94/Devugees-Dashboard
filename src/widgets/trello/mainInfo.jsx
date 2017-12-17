@@ -6,8 +6,6 @@ class MainInfo extends React.Component {
     const { data } = this.props;
     return (
       <li>
-        <span>{data.board.name}</span>
-        <span>{data.card.name}</span>
       </li>
     );
   }
