@@ -26,7 +26,7 @@ export default class News extends React.Component {
 
   articlesList(articles) {
 
-    const listNewsArticles = articles.map((article, i) =>
+    const listNewsArticles = articles.map((article) =>
     <div key={article.title} className="articles">
       <img className="news-logo" src={article.urlToImage} alt="news"></img>
       <h3 className= "text-title">{article.title}
