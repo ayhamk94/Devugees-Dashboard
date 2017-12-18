@@ -26,24 +26,24 @@ export default class News extends React.Component {
 
   articlesList(articles) {
 
-    const listNewsArticles = articles.map((article) =>
+    const listNewsArticles = articles.map((article, i) =>
     <div key={article.title} className="articles">
-      <h2 >{!article.author? 'Ars Technica' : article.author}
-      </h2>
       <img className="news-logo" src={article.urlToImage} alt="news"></img>
       <h3 className= "text-title">{article.title}
       </h3>
       <p className="description" >{article.description}
+        <a href={article.url}> more... </a>
       </p>
-      <a href={article.url}>
-        <i>More info...</i>
-      </a>
+
+      <p className="news-author"> — {!article.author? 'Ars Technica' : article.author}  </p>
+
     </div>);
     return listNewsArticles;
   }
 
   render() {
     const {articles}  = this.state;
+  //  console.log(articles);
     var settings = {
       dots: false,
       infinite: true,
@@ -53,7 +53,7 @@ export default class News extends React.Component {
       autoplaySpeed: 10000
     };
     return (<div>
-      {articles.length == 0 ? <Spinner /> :
+      {articles.length === 0 ? <Spinner /> :
       <Slider {...settings} arrows={false} autoplay={true} className="slider-news">{this.articlesList(articles)}</Slider>}
     </div>)
   }
