@@ -3,17 +3,22 @@ import Paper from 'material-ui/Paper';
 import WidgetsContainer from './WidgetsContainer';
 import Sidebar from './Sidebar';
 
-
-const Dashboard = () =>
+const styles = {
+  container: {
+    display: 'flex',
+    backgroundColor: '#cccccc',
+    borderRadius: 'none',
+    alignItems: 'flex-start'
+  }
+};
+const Dashboard = props =>
   (
-    <Paper style={{
-       display: 'flex',
-       backgroundColor: '#cccccc',
-       borderRadius: 'none',
-}}
-    >
-      <Sidebar />
-      <WidgetsContainer />
+    <Paper style={styles.container}>
+      <Sidebar widgets={props.widgets} />
+      <WidgetsContainer
+        editMode={props.editMode}
+        widgets={props.widgets}
+      />
     </Paper>
 
   );

@@ -43,3 +43,10 @@ a {
   text-decoration: none;
   color: #2196F3;
 }
+
+.edit-btn {
+  position: absolute;
+  color:red;
+  top: -10px;
+  z-index: 30;
+}
