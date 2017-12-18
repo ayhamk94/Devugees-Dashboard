@@ -6,7 +6,7 @@ import Sidebar from './Sidebar';
 const styles = {
   container: {
     display: 'flex',
-    backgroundColor: '#cccccc',
+    backgroundColor: '#E0E0E0',
     borderRadius: 'none',
     alignItems: 'flex-start'
   }

@@ -10,7 +10,7 @@ const widgtesData = widgets;
 
 const appTheme = getMuiTheme({
   palette: {
-    primary1Color: '#262626',
+    primary1Color: '#212121',
     primary2Color: '#99003d',
     primary3Color: '#ffcce0',
   },
