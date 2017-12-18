@@ -54,7 +54,6 @@ export default class Movie extends Component {
     const { data } = this.state
     const settings = {
       showStatus: false,
-      width: '500px',
       showIndicators: false,
       useKeyboardArrows: true,
       autoPlay: this.props.autoPlay || false,
