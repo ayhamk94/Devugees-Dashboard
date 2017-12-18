@@ -26,6 +26,9 @@ export default class Schedule extends Component {
       this.setUpHandler();
       setInterval(this.updateHandler, 1000*60);
     }
+    window.onfocus = () => {
+      this.setUpHandler();
+    }
   }
 
   getMinutes(milliseconds) {
