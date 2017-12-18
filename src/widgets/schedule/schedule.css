@@ -19,6 +19,16 @@
   border-top: 1px solid #f5f5f5;
 }
 
+.schedule span.handel {
+  position: relative;
+  width: calc(100% + 8px) ;
+  height: 2px;
+  background-color: red;
+  margin: -4px;
+  z-index: 100;
+  transition: all 0.25;
+}
+
 .schedule div span {
   text-align: left;
   padding: 8px;
