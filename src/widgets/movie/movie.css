@@ -31,7 +31,6 @@
   margin-left: 10px;
   text-align: left;
   flex: 3;
-  max-height: 100%
 }
 
 .movie-info h1 {
@@ -46,6 +45,8 @@
   padding: 6px 0;
   overflow: auto;
   flex: 2;
+  overflow: auto;
+  max-height: 200px;
   font-size: 15px;
   font-weight: 200;
   border-bottom: 1px solid lightgray;
