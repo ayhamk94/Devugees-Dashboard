@@ -12,6 +12,7 @@ import Quote from '../widgets/quote/Quote';
 import Widget from './Widget';
 
 
+
 const Dashboard = () =>
   (
     <div className="main">
@@ -32,11 +33,8 @@ const Dashboard = () =>
             <Movie autoPlay={true} />
           </Widget>
 
-          <Widget className="medium" >
+          <Widget className="small" >
             <Activity />
-          </Widget>
-          <Widget className="medium">
-            <Notes />
           </Widget>
           <Widget className="small" >
             <Clock />
@@ -44,10 +42,12 @@ const Dashboard = () =>
           <Widget className="small">
             <Weather />
           </Widget>
-          <Widget className="small">
+          <Widget className="big">
             <Trello />
           </Widget>
-
+          <Widget className="medium">
+            <Notes />
+          </Widget>
           <Widget className="small">
             <Decider />
           </Widget>
