@@ -1,116 +1,102 @@
 import React, { Component } from 'react';
-import axios                from 'axios';
+import moment               from 'moment';
 import Spinner              from '../../components/Spinner';
 
+import List                 from './List';
+import defaultData          from './ScheduleModel';
 import './schedule.css'
 
-export default class Xkcd extends Component {
+export default class Schedule extends Component {
   constructor() {
     super();
     this.state = {
-      data: []
+      units: defaultData,
+      handler: {
+        position: 0
+      },
+      startTime: 0,
+      endTime: 0,
+      listHeight: 368
     };
   }
 
-  model() {
-    return  [
-      {
-        start: '09:00',
-        end: '09:45',
-        minutes:	45,
-        body: 'Welcome, Classbook, Repeating things from previous day',
-        type: 'lesson'
-      },
-      {
-        start: '09:45',
-        end: '10:30',
-        minutes:	45,
-        body: 'Live coding, studies, exercises, projects',
-        type: 'lesson'
-      },
-      {
-        start: '10:30',
-        end: '10:45',
-        minutes:	15,
-        body: 'Short break',
-        type: 'break'
-      },
-      {
-        start: '10:45',
-        end: '12:15',
-        minutes:	90,
-        body: 'Live coding, studies, exercises, projects',
-        type: 'lesson'
-      },
-      {
-        start: '12:15',
-        end: '13:00',
-        minutes:	45,
-        body: 'Lunch break',
-        type: 'break'
-      },
-      {
-        start: '13:00',
-        end: '14:30',
-        minutes:	90,
-        body: 'Live coding, studies, exercises, projects',
-        type: 'lesson'
-      },
-      {
-        start: '14:30',
-        end: '14:45',
-        minutes:	15,
-        body: 'Short break',
-        type: 'break'
-      },
-      {
-        start: '14:45',
-        end: '16:15',
-        minutes:	90,
-        body: 'Live coding, studies, exercises, projects',
-        type: 'lesson'
-      }
-    ]
-  }
-
   componentDidMount() {
-    this.setState({ data: this.model })
+    this.setState()
+    if (this.state.units) {
+      this.setUpHandler();
+      setInterval(this.updateHandler, 1000*60);
+    }
   }
 
+  getMinutes(milliseconds) {
+    return (milliseconds / 1000) / 60
+  }
+
+  setUpHandler = () => {
+    const state = this.state
+
+    const startTime = state.units[0].start.split(':');
+    const scheduleStart = moment()
+      .hour(startTime[0])
+      .minute(startTime[1])
+      .seconds('0');
+
+    const endTime = state.units[state.units.length - 1].end.split(':');
+    const scheduleEnd = moment()
+      .hour(endTime[0])
+        .minute(endTime[1])
+        .seconds('0');
+
+    const time = scheduleEnd - scheduleStart;
+    const minutes = this.getMinutes(time);
+
+    const handlerPerMinute = state.listHeight / minutes;
+    const now = moment();
+    const initialHandlerPosition = this.getMinutes(now - scheduleStart) * handlerPerMinute;
+
+    this.setState({
+      totalMinutes: minutes,
+      startTime: scheduleStart,
+      endTime: scheduleEnd,
+      handler: {
+        perMinute: handlerPerMinute,
+        position: initialHandlerPosition
+      }
+    })
+  }
+
+  updateHandler = () => {
+    const handler = {...this.state.handler};
+    handler.position = handler.position + handler.perMinute
+    this.setState({ handler })
+  }
+
+  dataReady(data) {
+    return data && data.length === 0;
+  }
+
+  getHeightOfDomNode( node ){
+    if (node !== undefined && node !== null) {
+      let height = node.clientHeight;
+      if ( this.state['listHeight'] !== height ) {
+        this.setState({ listHeight: height })
+      }
+    }
+  }
 
   render() {
-
-    const handleSettings = {
-        width: 'calc(100% + 8px) ',
-        height: '2px',
-        backgroundColor: 'red',
-        margin: '-4px',
-        zIndex: '100'
-    }
-
+    const { units, handler } = this.state;
 
     return (
-
-      <div className="schedule">
-        <span className={'shadow'} style={handleSettings}> </span>
-        {this.model().map((unit, i) => {
-          return (
-            <div
-              key={i}
-              className={ unit.type == 'lesson' ? 'highlighted shadow' : ''}
-              style={{
-                flexBasis: unit.minutes,
-                zIndex: i + 1
-              }}
-            >
-              <span key={i} className={unit.type} >
-                { unit.type == 'lesson' ? unit.body : '' }
-              </span>
-            </div>
-          )
-        })}
-      </div>
-
-    );
+      this.dataReady(units) ?
+      <Spinner />
+      :
+      <List
+        data={units}
+        handlerPosition={handler.position}
+        // why god? ...why?   ¯\_(ツ)_/¯
+        scheduleRef={(listNode) => this.getHeightOfDomNode(listNode)}
+      />
+    )
   }
 }
