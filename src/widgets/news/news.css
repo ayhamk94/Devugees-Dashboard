@@ -1,23 +1,18 @@
-.slider-news {
+.wrapper-news li.slide {
+  background: white;
+}
+
+.wrapper-news {
   height: 100%;
 }
 
-.slider-news .articles {
+.articles {
+  padding: 20px;
   line-height: 1.2em;
   font-weight: normal;
 }
 
-.articles .description {
-  font-size: 13px;
-}
-
-.text-title {
-  font-weight: 500 !important;
-  color: red;
-  text-align: center;
-}
-
-.slider-news a {
+.articles a {
   color: red;
   font-weight: 200;
   text-decoration: none;
@@ -25,7 +20,7 @@
   transition: color .3s ease;
 }
 
-.slider-news a :hover {
+.articles a:hover {
   color: #636365;
 }
 
@@ -34,7 +29,22 @@
   width: 100%;
 }
 
-.articles .news-author {
+.news-title {
+  padding-top: 20px;
+  font-weight: 500 !important;
+  color: red;
+  text-align: center;
+}
+
+.articles .news-description {
+  font-size: 13px;
+  text-align: justify;
+  padding-top: 20px;
+}
+
+.news-author {
   color: #636365;
   font-size: 12px;
+  text-align: right;
+  padding-top: 20px;
 }

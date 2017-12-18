@@ -11,8 +11,7 @@
     "react-dom": "^16.2.0",
     "react-masonry-component": "^6.0.1",
     "react-responsive-carousel": "^3.1.30",
-    "react-scripts": "1.0.17",
-    "react-slick": "^0.16.0"
+    "react-scripts": "1.0.17"
   },
   "scripts": {
     "start": "react-scripts start",

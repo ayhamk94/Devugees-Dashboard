@@ -1,6 +1,7 @@
 import React from 'react';
-import Slider from 'react-slick';
+//import Slider from 'react-slick';
 import Spinner from '../../components/Spinner';
+import {Carousel} from 'react-responsive-carousel';
 import './news.css';
 
 export default class News extends React.Component {
@@ -26,35 +27,50 @@ export default class News extends React.Component {
 
   articlesList(articles) {
 
-    const listNewsArticles = articles.map((article) =>
-    <div key={article.title} className="articles">
+    const listNewsArticles = articles.map((article) => <div key={article.title} className="articles">
       <img className="news-logo" src={article.urlToImage} alt="news"></img>
-      <h3 className= "text-title">{article.title}
+      <h3 className="news-title">{article.title}
       </h3>
-      <p className="description" >{article.description}
-        <a href={article.url}> more... </a>
+      <p className="news-description">{article.description}
+        <a href={article.url}>
+          more...
+        </a>
       </p>
 
-      <p className="news-author"> — {!article.author? 'Ars Technica' : article.author}  </p>
+      <p className="news-author">
+        — {
+          !article.author
+            ? 'Ars Technica'
+            : article.author
+        }
+      </p>
 
     </div>);
     return listNewsArticles;
   }
 
   render() {
-    const {articles}  = this.state;
-  //  console.log(articles);
-    var settings = {
-      dots: false,
-      infinite: true,
-      speed: 1000,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      autoplaySpeed: 10000
-    };
-    return (<div>
-      {articles.length === 0 ? <Spinner /> :
-      <Slider {...settings} arrows={false} autoplay={true} className="slider-news">{this.articlesList(articles)}</Slider>}
+    const {articles} = this.state;
+    //  console.log(articles);
+
+    const settings = {
+      showStatus: false,
+      showIndicators: false,
+      useKeyboardArrows: true,
+      autoPlay: true,
+      interval: 10000,
+      stopOnHover: true,
+      transitionTime: 500,
+      emulateTouch: true,
+      infiniteLoop: true,
+      showThumbs: false
+    }
+    return (<div className="wrapper-news">
+      {
+        articles.length === 0
+          ? <Spinner/>
+          : <Carousel {...settings}>{this.articlesList(articles)}</Carousel>
+      }
     </div>)
   }
 
