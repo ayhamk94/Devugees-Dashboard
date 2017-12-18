@@ -9,6 +9,7 @@ import Movie from '../widgets/movie/Movie';
 import Decider from '../widgets/decider/Decider';
 import News from '../widgets/news/News';
 import Quote from '../widgets/quote/Quote';
+import Schedule from '../widgets/schedule/Schedule';
 import Widget from './Widget';
 
 
@@ -30,7 +31,7 @@ const Dashboard = () =>
       >
         <div style={{ display: 'flex', justifyContent: 'flex-start', flexWrap: 'wrap' }}>
           <Widget className="medium" >
-            <Movie autoPlay={true} />
+            <Movie autoPlay={false} />
           </Widget>
 
           <Widget className="small" >
@@ -57,7 +58,9 @@ const Dashboard = () =>
           <Widget className="small">
             <Quote />
           </Widget>
-
+          <Widget className="small">
+            <Schedule />
+          </Widget>
         </div>
       </Paper>
     </div>

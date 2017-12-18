@@ -1,0 +1,42 @@
+.schedule {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.schedule div {
+  display: flex;
+  box-sizing: border-box;
+  justify-content: flex-start;
+}
+
+.schedule div.highlighted {
+  background-color: white;
+}
+
+.schedule div.highlighted {
+  border-top: 1px solid #f5f5f5;
+}
+
+.schedule span.handel {
+  position: relative;
+  width: calc(100% + 8px) ;
+  height: 2px;
+  background-color: red;
+  margin: -4px;
+  z-index: 100;
+  transition: all 0.25;
+}
+
+.schedule div span {
+  text-align: left;
+  padding: 8px;
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  /*color: rgba(0, 0, 0, 0.48);*/
+}
+
+.schedule .shadow {
+  box-shadow: 0px 1px 2px 0px #e3e3e3;
+}
