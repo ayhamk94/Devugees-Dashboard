@@ -13,10 +13,16 @@ or
 `yarn install` if you are using yarn.
 
 
+
 #### Start the server.
 `npm start`
 or
 `yarn start` if you are using yarn.
+
+## Trello integration
+Go to [https://trello.com/app-key]( https://trello.com/app-key ) and get your api key.
+Then get our Oauth token from that domain and put it into the Trello Setting [https://trello.com/1/connect?key=<PUBLIC_KEY>&name=MyApp&response_type=token](https://trello.com/1/connect?key=<PUBLIC_KEY>&name=MyApp&response_type=token)
+After you received your api key and token, put them together with your board id in the Settings field.
 ## Git rules
 #### Make sure you pull all the recent changes.
 `git pull`
