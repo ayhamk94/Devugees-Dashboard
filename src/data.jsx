@@ -9,6 +9,7 @@ import Decider from './widgets/decider/Decider';
 import News from './widgets/news/News';
 import Quote from './widgets/quote/Quote';
 import Schedule from './widgets/schedule/Schedule';
+import Quiz from './widgets/quiz/Quiz';
 
 
 const widgets = [
@@ -98,6 +99,14 @@ const widgets = [
     id: 'dds0119723809823876243',
     mounted: true,
     developerName: 'Oliver'
+  },
+  {
+    name:'Quiz',
+    component:<Quiz />,
+    className: 'big',
+    id: 'ddqz',
+    mounted: true,
+    developerName: 'Nabeel'
   }
 ];
 export default widgets;

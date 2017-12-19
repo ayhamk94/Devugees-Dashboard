@@ -7,7 +7,7 @@ import './App.css';
 import LandingPage from '../landingPage/LandingPage.jsx';
 import ScorePage from '../scorePage/ScorePage.jsx';
 import QuizPage from '../quizPage/QuizPage.jsx';
-// import Nav from '../nav/Nav.jsx';
+
 
 
 const styles = {
@@ -20,7 +20,7 @@ const styles = {
   slide: {  padding: 10,},
 };
 
-class App extends Component {
+class App extends React.Component {
 
 constructor(props){
   super(props);
