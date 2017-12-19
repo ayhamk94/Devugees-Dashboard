@@ -59,8 +59,8 @@ export default class Clock extends Component {
       hour: ((hours / 12) * 360) + ((minutes / 60) * 30) + 90
     };
 
-    deg.sec === 90 ? this.sec.style.transition = 'all 0s' : this.sec.style.transition = 'all 0.5s';
-    deg.min === 90 ? this.min.style.transition = 'all 0s' : this.min.style.transition = 'all 0.5s';
+    deg.sec === 90 ? this.sec.style.transition = 'all 0s ease-in-out' : this.sec.style.transition = 'all 0.5s ease-in-out';
+    deg.min === 90 ? this.min.style.transition = 'all 0s ease-in-out' : this.min.style.transition = 'all 0.5s ease-in-out';
 
     this.sec.style.transform = `rotate(${deg.sec}deg)`;
     this.min.style.transform = `rotate(${deg.min}deg)`;
@@ -80,7 +80,7 @@ export default class Clock extends Component {
             <div className="clock second" ref={sec => this.sec = sec} />
           </div>
         </div>
-        <div className="date" key="date">
+        <div style={{textAlign: "center"}} className="date" key="date">
           <span className="day">{day.toUpperCase()}</span>
           <div style={{textAlign: "center"}}>
             <span className="date">{date} </span>

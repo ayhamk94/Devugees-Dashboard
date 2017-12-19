@@ -39,7 +39,6 @@
   transform: rotate(90deg);
   transform-origin: 80%;
   transition: all 0.05s;
-  transition-timing-function: ease-in-out;
   border-bottom-left-radius: 3px;
   border-top-left-radius: 3px;
   box-shadow: 4px 4px 6px 0px rgba(0,0,0,0.12);
