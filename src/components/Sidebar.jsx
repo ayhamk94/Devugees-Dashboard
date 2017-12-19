@@ -6,7 +6,7 @@ import AddCircle from 'material-ui/svg-icons/content/add-circle';
 
 const styles = {
   contianer: {
-    width: '20%',
+    width: '15%',
     height: '90vh',
   }
 };

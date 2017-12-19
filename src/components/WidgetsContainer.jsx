@@ -9,7 +9,7 @@ const WidgetsContainer = props => (
     zDepth={0}
     style={{
               backgroundColor: '#b3b3b3',
-              width: '80%',
+              width: '85%',
               padding: '10px',
               height: '90vh',
               overflowY: 'scroll',
