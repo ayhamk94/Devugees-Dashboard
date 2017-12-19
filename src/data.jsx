@@ -74,15 +74,15 @@ const widgets = [
     developerName: 'Tommey'
 
   },
-  {
-    name: 'Quote',
-    component: <Quote />,
-    className: 'small',
-    id: 'ddq0',
-    mounted: true,
-    developerName: 'Maxi'
-
-  },
+  // {
+  //   name: 'Quote',
+  //   component: <Quote />,
+  //   className: 'small',
+  //   id: 'ddq0',
+  //   mounted: true,
+  //   developerName: 'Maxi'
+  //
+  // },
   {
     name: 'Schedule',
     component: <Schedule />,
