@@ -10,20 +10,21 @@ const styles = {
     height: '90vh',
   }
 };
-const Sidebar = props => (
+const Sidebar = ({ widgets, up }) => (
   <Paper
     zDepth={1}
     style={styles.contianer}
   >
     <List>
       <Subheader>Avilable Widgets</Subheader>
-      {props.widgets.map((widget) => {
+      {widgets.map((widget, i) => {
         if (!widget.mounted) {
           return (
             <ListItem
-              rightIcon={<AddCircle hoverColor="#2E7D32" />}
+              rightIcon={<AddCircle onClick={() => up(i)} hoverColor="#2E7D32" />}
               key={widget.id}
               primaryText={widget.name}
+
             />
           );
         }
