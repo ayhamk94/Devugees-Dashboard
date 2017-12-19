@@ -16,14 +16,17 @@ const styles = {
   }
 };
 
-const Widget = props => (
+const Widget = ({index, up, editMode, component, className }) => (
   <Card
     showExpandableButton={false}
-    className={props.className}
+    className={className}
     style={styles.contianer}
   >
-    {props.editMode ? <IconButton style={styles.editButton}><NavigationClose color="#cc0000" /></IconButton> : null}
-    {props.component}
+    {editMode ?
+      <IconButton style={styles.editButton}>
+        <NavigationClose onClick={()=> up(index)}color="#cc0000" />
+      </IconButton> : null}
+    {component}
   </Card>
 );
 export default Widget;

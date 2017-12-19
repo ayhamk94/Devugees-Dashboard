@@ -6,7 +6,6 @@ import AppNav from './components/Nav';
 import './App.css';
 import widgets from './data';
 
-const widgtesData = widgets;
 
 const appTheme = getMuiTheme({
   palette: {
@@ -24,18 +23,25 @@ class App extends React.Component {
     super(props);
     this.state = {
       editMode: false,
-      widgets: widgtesData,
+      widgets: [],
     };
+  }
+  componentWillMount(){
+    this.handleState(widgets)
+  }
+  handleState(widgets){
+    this.setState({ widgets })
   }
 
   ToggleEditMode = () => { this.setState({ editMode: !this.state.editMode }); }
 
   render() {
+    const { widgets, editMode } = this.state
     return (
       <div className="App">
         <MuiThemeProvider muiTheme={appTheme}>
           <AppNav ToggleEditMode={this.ToggleEditMode} />
-          <Dashboard editMode={this.state.editMode} widgets={this.state.widgets} />
+          <Dashboard editMode={editMode} data={widgets} />
         </MuiThemeProvider>
       </div>
     );
