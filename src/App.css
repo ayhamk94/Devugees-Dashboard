@@ -50,3 +50,6 @@ a {
   top: -10px;
   z-index: 30;
 }
+.top {
+  z-index: 999999999999
+}

@@ -9,16 +9,17 @@ const WidgetsContainer = ({ editMode, widgets, up }) => (
     zDepth={0}
     style={{
               backgroundColor: '#b3b3b3',
-              width: '80%',
+              width: '85%',
               padding: '10px',
               height: '90vh',
               overflowY: 'scroll',
+              alignItems: 'center',
               display: 'flex',
               justifyContent: 'flex-start',
               flexWrap: 'wrap'
             }}
   >
-    {widgets.map((widget,index) => {
+    {widgets.map((widget, index) => {
       if (widget.mounted) {
         return (
           <Widget
