@@ -8,6 +8,7 @@ import Movie from './widgets/movie/Movie';
 import Decider from './widgets/decider/Decider';
 import News from './widgets/news/News';
 import Quote from './widgets/quote/Quote';
+import Schedule from './widgets/schedule/Schedule';
 
 
 const widgets = [
@@ -82,5 +83,13 @@ const widgets = [
     developerName: 'Maxi'
 
   },
+  {
+    name: 'Schedule',
+    component: <Schedule />,
+    className: 'small',
+    id: 'dds01',
+    mounted: true,
+    developerName: 'Oliver'
+  }
 ];
 export default widgets;
