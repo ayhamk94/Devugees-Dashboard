@@ -9,7 +9,7 @@ const WidgetsContainer = ({ editMode, widgets, up }) => (
     zDepth={0}
     style={{
               backgroundColor: '#b3b3b3',
-              width: '85%',
+              width: '100%',
               padding: '10px',
               height: '90vh',
               overflowY: 'scroll',
