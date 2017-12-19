@@ -1,5 +1,27 @@
 import React from 'react';
 import Paper from 'material-ui/Paper';
+<<<<<<< HEAD
+import WidgetsContainer from './WidgetsContainer';
+import Sidebar from './Sidebar';
+
+const styles = {
+  container: {
+    display: 'flex',
+    backgroundColor: '#E0E0E0',
+    borderRadius: 'none',
+    alignItems: 'flex-start'
+  }
+};
+const Dashboard = props =>
+  (
+    <Paper style={styles.container}>
+      <Sidebar widgets={props.widgets} />
+      <WidgetsContainer
+        editMode={props.editMode}
+        widgets={props.widgets}
+      />
+    </Paper>
+=======
 import Weather from '../widgets/weather/Weather';
 import Activity from '../widgets/activity/Activity';
 import Clock from '../widgets/clock/Clock';
@@ -64,6 +86,7 @@ const Dashboard = () =>
         </div>
       </Paper>
     </div>
+>>>>>>> develop
 
   );
 export default Dashboard;

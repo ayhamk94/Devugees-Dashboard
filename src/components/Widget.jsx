@@ -1,19 +1,29 @@
 import React from 'react';
-import Paper from 'material-ui/Paper';
+import IconButton from 'material-ui/IconButton';
+import NavigationClose from 'material-ui/svg-icons/navigation/close';
+import { Card } from 'material-ui/Card';
 
+const styles = {
+  contianer: {
+    padding: '1rem',
+    overflowY: 'scroll',
+    position: 'relative'
+  },
+  editButton: {
+    position: 'absolute',
+    top: '-5px',
+    right: '-5px',
+  }
+};
 
 const Widget = props => (
-
-  <Paper
-    zDepth={1}
+  <Card
+    showExpandableButton={false}
     className={props.className}
-    style={{
-      padding: '1rem',
-      borderRadius: '0.2rem',
-      overflowY: 'auto'
-    }}
+    style={styles.contianer}
   >
-    {props.children}
-  </Paper>
+    {props.editMode ? <IconButton style={styles.editButton}><NavigationClose color="#cc0000" /></IconButton> : null}
+    {props.component}
+  </Card>
 );
 export default Widget;
