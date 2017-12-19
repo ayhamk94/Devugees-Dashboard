@@ -36,7 +36,10 @@ export default class Clock extends Component {
       day: this.clock.day,
       month: this.clock.month,
       date: this.clock.date,
-      year: this.clock.year
+      year: this.clock.year,
+      sec: '',
+      min: '',
+      hours: ''
     };
   }
   componentDidMount() {
@@ -59,25 +62,22 @@ export default class Clock extends Component {
       hour: ((hours / 12) * 360) + ((minutes / 60) * 30) + 90
     };
 
-    deg.sec === 90 ? this.sec.style.transition = 'all 0s ease-in-out' : this.sec.style.transition = 'all 0.5s ease-in-out';
-    deg.min === 90 ? this.min.style.transition = 'all 0s ease-in-out' : this.min.style.transition = 'all 0.5s ease-in-out';
-
-    this.sec.style.transform = `rotate(${deg.sec}deg)`;
-    this.min.style.transform = `rotate(${deg.min}deg)`;
-    this.hour.style.transform = `rotate(${deg.hour}deg)`;
+    this.setState({ sec: deg.sec })
+    this.setState({ min: deg.min })
+    this.setState({ hours: deg.hours })
   }
   render() {
     const {
-      day, month, date, year
+      day, month, date, year, hour, min, sec
     } = this.state;
 
     return (
       <div className="clock-main">
         <div className="clock-wrapper" key="clock">
           <div className="clock-face">
-            <div className="clock hour" ref={hour => this.hour = hour} />
-            <div className="clock min" ref={min => this.min = min} />
-            <div className="clock second" ref={sec => this.sec = sec} />
+            <div className="clock hour" style={{transform: `rotate(${hour}deg` }} />
+            <div className="clock min" style={{transform: `rotate(${min}deg` }} />
+            <div className="clock second" style={{transform: `rotate(${sec}deg` }} />
           </div>
         </div>
         <div style={{textAlign: "center"}} className="date" key="date">
