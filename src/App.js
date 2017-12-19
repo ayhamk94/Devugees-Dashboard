@@ -24,16 +24,18 @@ class App extends React.Component {
     this.state = {
       editMode: false,
       widgets: [],
-      drawerOpen: false
     };
   }
   componentWillMount() {
-    this.handleState(widgets);
-  }
-  handleState(widgets) {
     this.setState({ widgets });
   }
-  toggleDrawer = () => this.setState({ drawerOpen: !this.state.drawerOpen })
+
+  addRemoveWidgets(index) {
+    const d = this.state.widgets;
+    d[index].mounted = !d[index].mounted;
+    this.setState({ widgets: d });
+  }
+
 
   ToggleEditMode = () => { this.setState({ editMode: !this.state.editMode }); }
 
@@ -44,13 +46,13 @@ class App extends React.Component {
         <MuiThemeProvider muiTheme={appTheme}>
           <AppNav
             ToggleEditMode={this.ToggleEditMode}
-            toggleDrawer={this.toggleDrawer}
+            data={widgets}
+            addRemoveWidgets={widgets => this.addRemoveWidgets(widgets)}
           />
           <Dashboard
-            toggleDrawer={this.toggleDrawer}
+            addRemoveWidgets={widgets => this.addRemoveWidgets(widgets)}
             editMode={editMode}
             data={widgets}
-            drawerOpen={drawerOpen}
           />
         </MuiThemeProvider>
       </div>

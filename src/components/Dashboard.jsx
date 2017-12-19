@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Paper from 'material-ui/Paper';
 import WidgetsContainer from './WidgetsContainer';
-import Sidebar from './Sidebar';
+import SideDrawer from './SideDrawer';
 
 const styles = {
   container: {
@@ -13,30 +13,20 @@ const styles = {
 };
 
 class Dashboard extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      data: this.props.data
-    };
-  }
-  handleState(index) {
-    const d = this.state.data;
-    d[index].mounted = !d[index].mounted;
-    this.setState({ data: d });
-  }
   render() {
-    const { editMode, drawerOpen, toggleDrawer } = this.props;
-    const { data } = this.state;
+    const {
+      editMode, drawerOpen, toggleDrawer, data
+    } = this.props;
     return (
       <Paper style={styles.container}>
-        <Sidebar
-          up={data => this.handleState(data)}
+        <SideDrawer
+          up={data => this.props.addRemoveWidgets(data)}
           widgets={data}
           drawerOpen={drawerOpen}
           toggleDrawer={toggleDrawer}
         />
         <WidgetsContainer
-          up={data => this.handleState(data)}
+          up={data => this.props.addRemoveWidgets(data)}
           editMode={editMode}
           widgets={data}
         />
