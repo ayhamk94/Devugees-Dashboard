@@ -24,7 +24,6 @@ const Sidebar = props => (
               rightIcon={<AddCircle hoverColor="#2E7D32" />}
               key={widget.id}
               primaryText={widget.name}
-
             />
           );
         }
