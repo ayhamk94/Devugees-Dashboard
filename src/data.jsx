@@ -21,6 +21,14 @@ const widgets = [
     developerName: 'Ayham'
   },
   {
+    name: 'News',
+    component: <News />,
+    className: 'small',
+    id: 'ddw01',
+    mounted: true,
+    developerName: 'Maxi'
+  },
+  {
     name: 'Clock',
     component: <Clock />,
     className: 'small',
