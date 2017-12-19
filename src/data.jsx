@@ -9,7 +9,7 @@ import Decider from './widgets/decider/Decider';
 import News from './widgets/news/News';
 import Quote from './widgets/quote/Quote';
 import Schedule from './widgets/schedule/Schedule';
-
+import Bitcoin from './widgets/bitcoin/bitcoin';
 
 const widgets = [
   {
@@ -90,6 +90,15 @@ const widgets = [
     id: 'dds01',
     mounted: true,
     developerName: 'Oliver'
-  }
+  },
+   {
+    name: 'Bitcoin',
+    component: <Bitcoin />,
+    className: 'small',
+    id: 'dddbit01',
+    mounted: true,
+    developerName: 'Asjad'
+  },
+
 ];
 export default widgets;
