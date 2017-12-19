@@ -5,47 +5,49 @@ import './quote.css';
 export default class Quote extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      quote: [],
-      author: []
-    };
-
+    this.state = { existenQuote: [] }
   }
 
   componentDidMount() {
     var url = 'http://quotes.rest/qod.json';
     var req = new Request(url);
-    fetch(req).then((response) => {
-      response.json().then(data => {
-    //        console.log('data: ', data)
-        let quotes = data.contents.quotes[0];
-        let quote = quotes.quote;
-        let author = quotes.author;
-        this.setState({quote, author});
+    var existenQuote = JSON.parse(localStorage.getItem("quote"));
 
-      }).catch((err) => {
-    //      console.log('Err: ', err);
-      });
-    })
+    existenQuote == null
+      ? fetch(req).then((response) => {
+        response.json().then(data => {
+          //  console.log('data: ', data)
+          let quotes = data.contents.quotes[0];
+          let quote = quotes.quote;
+          let author = quotes.author;
+          var object = {quote: quote, author: author};
+          localStorage.setItem("quote", JSON.stringify(object));
+          var existenQuote = object;
+          this.setState({existenQuote});
+        })/*.catch((err) => {console.log('Err: ', err); });*/
+      })
+      : this.setState({existenQuote});
   }
 
   render() {
-    const {quote, author} = this.state;
-
+    const {existenQuote} = this.state;
+    const quote = existenQuote["quote"];
+    const author = existenQuote["author"];
     return (<div>
       {
-        quote.length === 0 && author.length === 0
+        existenQuote.length === 0
           ? <Spinner/>
           : <div className="blockquote">
-            <p className="quotation-mark opening">&ldquo;</p>
-            <h3 className="quote">{quote}</h3>
-            <p className="quotation-mark closing">
-              &rdquo;</p>
-            <hr/>
-            <p className="author">{author}</p>
-          </div>
-          }
-        </div>)
-
+              <p className="quotation-mark opening">&ldquo;</p>
+              <h3 className="quote">{quote}</h3>
+              <p className="quotation-mark closing">
+                &rdquo;</p>
+              <hr/>
+              <p className="author">{author}</p>
+            </div>
       }
+
+    </div>)
+
+  }
 }
