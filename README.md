@@ -56,7 +56,7 @@ This a simple dashboard page using [React](https://reactjs.org/) and [Material-U
   `git checkout <name of your branch>`
   `git merge develop`
 
-### Important 
+### Important
 __Push your branch to GitHub and create a merge request.__
 __Always make sure you are working on your own branch and creating a merge. requst into `Develop`.__
 
@@ -121,6 +121,6 @@ then add your widget info including the Component to the array as follows
 
 ## Widget specifics
 ### Trello integration
-Go to [https://trello.com/app-key]( https://trello.com/app-key ) and get your api key.
-Then get our Oauth token from that domain and put it into the Trello Setting [https://trello.com/1/connect?key=<PUBLIC_KEY>&name=MyApp&response_type=token](https://trello.com/1/connect?key=<PUBLIC_KEY>&name=MyApp&response_type=token)
-After you received your api key and token, put them together with your board id in the Settings field.
+1. Go to [https://trello.com/app-key]( https://trello.com/app-key ) and get your api key.
+2. Then get our Oauth token from that domain and put it into the Trello Setting [https://trello.com/1/connect?key=<PUBLIC_KEY>&name=MyApp&response_type=token](https://trello.com/1/connect?key=<PUBLIC_KEY>&name=MyApp&response_type=token)
+3. After you received your api key and token, put them together with your board id in the Settings field.
