@@ -1,3 +1,4 @@
+import React from 'react';
 import Weather from './widgets/weather/Weather';
 import Activity from './widgets/activity/Activity';
 import Clock from './widgets/clock/Clock';
@@ -7,7 +8,7 @@ import Movie from './widgets/movie/Movie';
 import Decider from './widgets/decider/Decider';
 import News from './widgets/news/News';
 import Quote from './widgets/quote/Quote';
-import React from 'react';
+
 
 const widgets = [
   {
@@ -15,14 +16,16 @@ const widgets = [
     component: <Weather />,
     className: 'small',
     id: 'ddw01',
-    mounted: true
+    mounted: true,
+    developerName: 'Ayham'
   },
   {
     name: 'Clock',
     component: <Clock />,
     className: 'small',
     id: 'ddc0',
-    mounted: true
+    mounted: true,
+    developerName: 'Axel'
 
   },
   {
@@ -30,16 +33,17 @@ const widgets = [
     component: <Activity />,
     className: 'medium',
     id: 'dda0',
-    mounted: false
+    mounted: false,
+    developerName: 'Ayham & Tommey'
 
   },
   {
     name: 'Trello',
     component: <Trello />,
-
     className: 'small',
     id: 'ddt0',
-    mounted: false
+    mounted: false,
+    developerName: 'Tommey'
 
   },
   {
@@ -48,6 +52,7 @@ const widgets = [
     className: 'medium',
     id: 'ddn0',
     mounted: false,
+    developerName: 'Axel'
 
   },
   {
@@ -56,6 +61,7 @@ const widgets = [
     className: 'medium',
     id: 'ddm0',
     mounted: true,
+    developerName: 'Axel'
 
   },
   {
@@ -63,7 +69,8 @@ const widgets = [
     component: <Decider />,
     className: 'small',
     id: 'ddd0',
-    mounted: false,
+    mounted: true,
+    developerName: 'Tommey'
 
   },
   {
@@ -72,6 +79,7 @@ const widgets = [
     className: 'small',
     id: 'ddq0',
     mounted: true,
+    developerName: 'Maxi'
 
   },
 ];

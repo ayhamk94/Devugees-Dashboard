@@ -42,37 +42,27 @@ or
 #### class `big` give the widget `width: 100%`
 #### class `medium` give the widget `width: 50%`
 #### class `small` give the widget `width: 25%`
+####  
+#### in data.js import your widgets from widget folder
 
+```jsx
+
+import Trello from './widgets/trello/Trello';
+
+```
+#### then add your widget info including the Component to the array as follows 
 
 ``` jsx
-import React from 'react';
-import Example from './widgets/example/example';
-import Widget from './Widget';
+{
+  name: 'Trello',
+  component: <Trello />,
+  className: 'small',
+  id: 'ddt0',
+  mounted: false,
+  developerName: 'Tommey'
 
-class Dashboard extends React.Component {
-  render() {
-    return(
-      <div>
-        <h1>
-          DEVUGEES DASHBOARD
-        </h1>
-        <div className="widgets-container">
-          <Widget className="big">
-            <Example/>
-          </Widget>
-          <Widget className="small">
-            <News/>
-          </Widget>
-          <Widget className="medium">
-            <Clocks/>
-          </Widget>
-        </div>
-      </div>
+},
 
-    )
-  }
-}
-export default Dashboard;
 
 ```
 #### Use your css file inside the main component of your widget.
