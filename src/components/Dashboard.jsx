@@ -13,35 +13,35 @@ const styles = {
 };
 
 class Dashboard extends Component {
-  constructor(props){
-    super(props)
+  constructor(props) {
+    super(props);
     this.state = {
       data: this.props.data
-    }
+    };
   }
-  componentDidMount(){
+  handleState(index) {
+    const d = this.state.data;
+    d[index].mounted = !d[index].mounted;
+    this.setState({ data: d });
   }
-  handleState(index){
-    const d = this.state.data
-    d[index].mounted = !d[index].mounted
-    console.log(d[index]);
-    this.setState({ data: d })
-    // console.log(data);
-  }
-  render(){
-    const { editMode } = this.props
-    const { data } = this.state
-    console.log("Dasboard widgets state: ", data);
+  render() {
+    const { editMode, drawerOpen, toggleDrawer } = this.props;
+    const { data } = this.state;
     return (
       <Paper style={styles.container}>
-        <Sidebar up={data => this.handleState(data)} widgets={data} />
+        <Sidebar
+          up={data => this.handleState(data)}
+          widgets={data}
+          drawerOpen={drawerOpen}
+          toggleDrawer={toggleDrawer}
+        />
         <WidgetsContainer
           up={data => this.handleState(data)}
           editMode={editMode}
           widgets={data}
         />
       </Paper>
-    )
+    );
   }
 }
 

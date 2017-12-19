@@ -1,19 +1,17 @@
 import React from 'react';
-import Paper from 'material-ui/Paper';
+
 import { List, ListItem } from 'material-ui/List';
 import Subheader from 'material-ui/Subheader';
 import AddCircle from 'material-ui/svg-icons/content/add-circle';
+import Drawer from 'material-ui/Drawer';
 
-const styles = {
-  contianer: {
-    width: '15%',
-    height: '90vh',
-  }
-};
-const Sidebar = ({ widgets, up }) => (
-  <Paper
-    zDepth={1}
-    style={styles.contianer}
+const Sidebar = ({
+  widgets, up, drawerOpen, toggleDrawer
+}) => (
+  <Drawer
+    docked={false}
+    width={300}
+    open={drawerOpen}
   >
     <List>
       <Subheader>Avilable Widgets</Subheader>
@@ -24,12 +22,13 @@ const Sidebar = ({ widgets, up }) => (
               rightIcon={<AddCircle onClick={() => up(i)} hoverColor="#2E7D32" />}
               key={widget.id}
               primaryText={widget.name}
+              onRequestChange={toggleDrawer}
 
             />
           );
         }
       })}
     </List>
-  </Paper>
+  </Drawer>
 );
 export default Sidebar;

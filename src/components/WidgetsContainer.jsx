@@ -13,12 +13,13 @@ const WidgetsContainer = ({ editMode, widgets, up }) => (
               padding: '10px',
               height: '90vh',
               overflowY: 'scroll',
+              alignItems: 'center',
               display: 'flex',
               justifyContent: 'flex-start',
               flexWrap: 'wrap'
             }}
   >
-    {widgets.map((widget,index) => {
+    {widgets.map((widget, index) => {
       if (widget.mounted) {
         return (
           <Widget
