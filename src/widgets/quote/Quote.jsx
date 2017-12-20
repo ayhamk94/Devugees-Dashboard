@@ -16,9 +16,7 @@ export default class Quote extends React.Component {
     existenQuote == null
       ? fetch(req).then((response) => {
         response.json().then(data => {
-           console.log('data: ', data)
           let quotes = data.contents.quotes[0];
-          console.log(quotes);
           let quote = quotes.quote;
           let author = quotes.author;
           var object = {quote: quote, author: author};
