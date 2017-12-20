@@ -14,7 +14,7 @@ const appTheme = getMuiTheme({
     primary3Color: '#ffcce0',
   },
   appBar: {
-    height: 60,
+    height: 40,
   },
 });
 
