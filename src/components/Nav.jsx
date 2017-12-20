@@ -24,8 +24,10 @@ class AppNav extends React.Component {
   }
 }
 export default AppNav;
+
+
 AppNav.propTypes = {
   ToggleEditMode: PropTypes.func,
-  data: PropTypes.array,
+  data: PropTypes.array.isRequired,
   addRemoveWidgets: PropTypes.func,
 };

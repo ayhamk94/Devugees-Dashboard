@@ -36,9 +36,9 @@ const Widget = ({
 export default Widget;
 
 Widget.propTypes = {
-  index: PropTypes.number,
+  index: PropTypes.number.isRequired,
   up: PropTypes.func,
   editMode: PropTypes.bool,
-  component: PropTypes.element,
-  className: PropTypes.string,
+  component: PropTypes.element.isRequired,
+  className: PropTypes.string.isRequired,
 };

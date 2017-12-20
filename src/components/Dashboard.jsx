@@ -36,6 +36,6 @@ export default Dashboard;
 Dashboard.propTypes = {
   editMode: PropTypes.bool,
   toggleDrawer: PropTypes.func,
-  data: PropTypes.array,
+  data: PropTypes.array.isRequired,
   addRemoveWidgets: PropTypes.func,
 };

@@ -45,6 +45,6 @@ export default class SideDrawer extends React.Component {
   }
 }
 SideDrawer.propTypes = {
-  widgets: PropTypes.array,
+  widgets: PropTypes.array.isRequired,
   up: PropTypes.func,
 };
