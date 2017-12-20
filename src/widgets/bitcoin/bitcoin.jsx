@@ -3,6 +3,7 @@ import {List, ListItem} from 'material-ui/List';
 import Divider from 'material-ui/Divider';
 import ActionInfo from 'material-ui/svg-icons/action/info';
 import Spinner from '../../components/Spinner';
+import Subheader from 'material-ui/Subheader';
 
 
 const styles = {
@@ -30,18 +31,20 @@ export default class Bitcoin extends React.Component {
         {
         data && data.bpi?
           <div>
+
+
             <h1>Bitcoin Rate</h1>
             <div style={styles.rate}>
             <List>
-            Rate:
+           <Subheader><strong>Rate</strong></Subheader>
                 <ListItem primaryText={data.bpi.USD.rate.toString()+" $"}  />
                 <ListItem primaryText={data.bpi.EUR.rate.toString()+" €"} />
                 <ListItem primaryText={data.bpi.GBP.rate.toString()+" £"} />
               </List>
-            <div>Updated: <br/> {data.time.updated}</div>
+            
               <br/>
               <br/>
-              <small>{ data.disclaimer }</small>
+              <small><div>Updated: <br/> {data.time.updated}</div></small>
 
             </div>
           </div>
