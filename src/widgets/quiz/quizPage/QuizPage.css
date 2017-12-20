@@ -29,3 +29,6 @@
 .noselect{
    user-select: none;
 }
+.card-text-question {
+  min-height: 100px;
+}

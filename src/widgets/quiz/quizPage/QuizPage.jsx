@@ -42,10 +42,10 @@ class QuizPage extends React.Component {
       <div className="card text-center container noselect">
         <div className="card-header">Question <span>{this.state.question}</span></div>
         <div className="card-block">
-          <p className="card-text  ">{this.props.questionArr[this.state.question - 1].question}                                                    </p>
+          <p className="card-text-question">{this.props.questionArr[this.state.question - 1].question}</p>
         </div>
-        <div className="card-footer text-muted ">
-          <RaisedButton primary id="rightbtn" onClick={e => this.handleValidate(true)}>Right                                                    </RaisedButton>
+        <div>
+          <RaisedButton primary onClick={e => this.handleValidate(true)}>Right</RaisedButton>
           <RaisedButton secondary onClick={e => this.handleValidate(false)}>Wrong </RaisedButton>
         </div>
       </div>
