@@ -6,11 +6,10 @@ import { Carousel } from 'react-responsive-carousel';
 import Spinner from '../../components/Spinner';
 import './movie.css';
 
-
 const url = 'https://api.themoviedb.org/3';
 const key = 'api_key=733712954fe242fa22a31638b23362b9';
 
-const img = (path, size = 'original') => `http://image.tmdb.org/t/p/${size}${path}`;
+const img = (path, size = 'original') => `https://image.tmdb.org/t/p/${size}${path}`;
 const getMovie = (field, append) => axios.get(`${url}${field}${key}&append_to_response=${append}`).then(a => a.data);
 
 
@@ -18,7 +17,7 @@ const ShowMovie = ({ data }) => (
   <div className="movie-wrapper">
     <div className="movie-img">
       <a href={`https://www.themoviedb.org/movie/${data.id}`}>
-        <img src={img(data.poster_path, 'w500')} className="" alt="" />
+        <img src={img(data.poster_path, 'w600')} className="" alt="" />
       </a>
     </div>
     <div className="movie-info">
