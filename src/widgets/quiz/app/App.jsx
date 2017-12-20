@@ -29,9 +29,9 @@ constructor(props){
       page:'LandingPage',
       score:0,
       slideIndex: 0,
-      diffeculty:"easy",
+      diffeculty:"hard",
       questionNum:10,
-       catagories:"",
+      catagories:"",
       questionArr:[]
       }
 
@@ -41,9 +41,9 @@ constructor(props){
       this.newGame=this.newGame.bind(this);
     }
 
-  onStartgame(user) {
-
-    fetch('https://opentdb.com/api.php?amount=10&type=boolean&encode=url3986')
+  onStartgame(user,diffeculty) {
+    let replayApi='https://opentdb.com/api.php?amount=10&type=boolean&diffeculty='+diffeculty+'&encode=url3986';
+    fetch(replayApi)
     .then((response)=>response.json())
     .then((json)=>{
     let questionArr=  json.results.map((e)=>{
@@ -95,7 +95,7 @@ constructor(props){
     return (
       <MuiThemeProvider>
         <div className='App'>
-          <div>
+          <div className="full-width">
             <Tabs   onChange={this.handleChange}  value={this.state.slideIndex}  >
               <Tab label="Start" value={0} />
               <Tab label="Quiz time" value={1} />

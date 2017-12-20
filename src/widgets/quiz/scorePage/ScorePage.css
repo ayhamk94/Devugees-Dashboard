@@ -1,6 +1,23 @@
-.container {
-  margin-left: auto;
-  margin-right: auto;
+.container-scorePage {}
+
+.left-pane {
+  float: left;
+  margin: auto;
+  padding-left: 50px;
+  padding-right: 25px;
+}
+
+.right-pane {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.btn-center {
+  display: flex;
+  flex-flow: column;
+  padding-top: 40px;
+  padding-left: 25px;
 }
 
 #scoreText {

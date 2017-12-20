@@ -1,6 +1,5 @@
 .container{
       padding: 0;
-
 }
 
 
@@ -10,4 +9,23 @@
 
 .progress-bar {
   transition: width 1s;
+}
+
+.card{
+  height: 100%;
+  display: flex;
+  flex-flow:column;
+}
+
+.card-block{
+  flex-grow:1
+
+}
+
+.CardText{
+  height:100%
+}
+
+.noselect{
+   user-select: none;
 }

@@ -12,52 +12,50 @@ constructor(props){
   super(props);
   this.state={
     user:'',
-    value:null
+    value:null,
+    diffeculty:"easy"
   };
 }
 
 handleChange = (event, index, value) => this.setState({value});
 
+
 render () {
   let toggleconfig=null;
   const style ={
     cards:{
-    'backgroundColor':'#FFA726',
     'textAlign':'center',
   },
-  button:{
+    Options_tap:{
+      display:"flex",
+      flexFlow:"column",
+      justifyContent:"center",
+      alignItems: "center"
 
+  },
+  button:{
+    marginLeft:"20px"
   }
 }
 
   toggleconfig=(
-    <form className="form-control" style={style.cards} onSubmit={(e)=>{e.preventDefault();this.props.onStartgame(this.state.user)}}>
+    <form className="form-control" style={style.cards} onSubmit={(e)=>{e.preventDefault();this.props.onStartgame(this.state.user,this.state.diffeculty,this.state.value)}}>
       <TextField className="form-control text-center" type="text"      placeholder="Enter user name or enter as guest" onChange={(e)=>this.setState({user:e.target.value})} />
-      <RaisedButton label="Start Quiz"  type="submit"/>
+
+        <RaisedButton style={style.button} label="Start Quiz"  type="submit"/>
 
       <Card style={style.cards}  className='style-override' >
         <CardHeader
           title="Options"
           actAsExpander={true}
-          showExpandableButton={true}
+          showExpandableButton={false}
         />
-      <CardText expandable={true}>
+      <CardText expandable={false} style={style.Options_tap}>
         <CardActions>
-          <RaisedButton  label="Easy"   primary  ={true}/>
-          <RaisedButton  label="Medium" secondary={true}/>
-          <RaisedButton  label="Hard" />
+          <RaisedButton  label="Easy"   primary  ={true} onClick={(e)=>this.setState({diffeculty:"easy"})}/>
+          <RaisedButton  label="Medium" secondary={true} onClick={(e)=>this.setState({diffeculty:"medium"})}/>
+          <RaisedButton  label="Hard"                    onClick={(e)=>this.setState({diffeculty:"hard"})}/>
         </CardActions>
-        <div>
-          <SelectField   floatingLabelText="Catagories"
-             value={this.state.value}
-              onChange={this.handleChange} >
-            <MenuItem value={1} primaryText="Film" />
-            <MenuItem value={2} primaryText="Music" />
-            <MenuItem value={3} primaryText="Television" />
-            <MenuItem value={4} primaryText="Sport" />
-            <MenuItem value={5} primaryText="Art" />
-          </SelectField>
-        </div>
       </CardText>
     </Card>
     </form>)
