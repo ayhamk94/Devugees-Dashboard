@@ -16,7 +16,6 @@ export default class Quote extends React.Component {
     existenQuote == null
       ? fetch(req).then((response) => {
         response.json().then(data => {
-          //  console.log('data: ', data)
           let quotes = data.contents.quotes[0];
           let quote = quotes.quote;
           let author = quotes.author;
@@ -24,7 +23,7 @@ export default class Quote extends React.Component {
           localStorage.setItem("quote", JSON.stringify(object));
           var existenQuote = object;
           this.setState({existenQuote});
-        })/*.catch((err) => {console.log('Err: ', err); });*/
+        }).catch((err) => {console.log('Err: ', err); });
       })
       : this.setState({existenQuote});
   }
