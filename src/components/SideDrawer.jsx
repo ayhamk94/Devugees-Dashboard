@@ -28,17 +28,16 @@ export default class SideDrawer extends React.Component {
           <List>
             <Subheader>Avilable Widgets</Subheader>
             {widgets.map((widget, i) => {
-                  if (!widget.mounted) {
-                    return (
-                      <ListItem
-                        rightIcon={<AddCircle onClick={() => up(i)} hoverColor="#2E7D32" />}
-                        key={widget.id}
-                        primaryText={widget.name}
-
-                      />
-                    );
-                  } return null;
-                })}
+              if (!widget.mounted) {
+                return (
+                  <ListItem
+                    rightIcon={<AddCircle onClick={() => up(i)} hoverColor="#2E7D32" />}
+                    key={widget.id}
+                    primaryText={widget.name}
+                  />
+                );
+              } return null;
+            })}
           </List>
         </Drawer>
       </div>

@@ -16,6 +16,6 @@ export default List;
 
 List.propTypes = {
   data: PropTypes.array,
-  handlerPosition: PropTypes.string,
-
+  handlerPosition: PropTypes.number,
+  scheduleRef: PropTypes.func
 };

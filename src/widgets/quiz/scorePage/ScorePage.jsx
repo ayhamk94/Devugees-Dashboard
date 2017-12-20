@@ -33,7 +33,7 @@ class ScorePage extends React.Component {
   handleLeaderBoardComponent() {
     const leaderBoardObj = JSON.parse(localStorage.getItem('leaderBoard'));
     const tempcom = leaderBoardObj.map((userleader, index) => (
-      <tr>
+      <tr key={index}>
         <th scope="row">{index + 1}</th>
         <td>{userleader.user}</td>
         <td>{userleader.score}/10</td>

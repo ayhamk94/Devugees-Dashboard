@@ -111,7 +111,7 @@ class ApiKey extends React.Component {
           title="Settings"
           titleStyle={{ padding: 0 }}
           actAsExpander
-          showExpandableButton
+          // showExpandableButton
           style={{ textAlign: 'left' }}
         />
         <CardText expandable>

@@ -33,8 +33,8 @@ export default class Activity extends React.Component {
               if (activity.type === 'PullRequestEvent' || activity.type === 'CreateEvent') {
                 return <EventCard key={activity.id} activity={activity} />;
               }
-                return null;
-              })
+              return null;
+            })
             :
             <CircularProgress />
           }

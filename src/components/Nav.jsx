@@ -17,7 +17,7 @@ class AppNav extends React.Component {
       />,
       <SideDrawer
         ref="sideDrawer"
-        up={data => this.props.addRemoveWidgets(data)}
+        up={data => addRemoveWidgets(data)}
         widgets={data}
       />
     ];
