@@ -93,7 +93,7 @@ constructor(props){
     }
 
     return (
-      <MuiThemeProvider>
+
         <div className='App'>
           <div className="full-width">
             <Tabs   onChange={this.handleChange}  value={this.state.slideIndex}  >
@@ -116,7 +116,7 @@ constructor(props){
           </div>
 
       </div>
-    </MuiThemeProvider>
+    
     );
   }
 }

@@ -1,4 +1,7 @@
-.container-scorePage {}
+.container-scorePage {
+  display: flex;
+  flex-flow: column;
+}
 
 .left-pane {
   float: left;
@@ -18,9 +21,13 @@
   flex-flow: column;
   padding-top: 40px;
   padding-left: 25px;
-}
+  }
 
 #scoreText {
-  font-size: 3em;
+  font-size: 1.25em;
   text-shadow: 2px 1px 7px #800000;
+}
+
+.card{
+  margin:0;
 }

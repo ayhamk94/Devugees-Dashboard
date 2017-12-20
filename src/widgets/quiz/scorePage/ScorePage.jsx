@@ -71,41 +71,7 @@ render() {
           <RaisedButton secondary='true' id="rightbtn" onClick={() => this.props.newGame()}>New Game
               <i className="ml-2 fa fa-play" aria-hidden="true"/></RaisedButton>
         </div>
-        </div>
-
-      {/* <Grid>
-        <Row className="show-grid">
-          <Col md={6}>
-            <div className="card">
-              <div className="card-block">
-                <h3 className="card-title">Your Score:</h3>
-                <p className="card-text text-danger" id="scoreText"><span>{this.props.score}</span>/10</p>
-              </div>
-            </div>
-          </Col>
-          <Col md={6}>
-            <div className="col-md-6">
-              <RaisedButton primary='true' id="rightbtn" onClick={() => this.props.tryAgain()}>Try Again
-                <i className="ml-2 fa fa-retweet" aria-hidden="true"/></RaisedButton>
-            </div>
-            <div className="col-md-6">
-              <RaisedButton primary='true' id="rightbtn" onClick={() => this.props.newGame()}>New Game
-                <i className="ml-2 fa fa-play" aria-hidden="true"/></RaisedButton>
-            </div>
-          </Col>
-        </Row>
-      </Grid> */}
-      {/* <div className="row container">
-        <div className="col-sm-4">
-
-        </div>
-
       </div>
-      <br/>
-      <div className="row container">
-
-      </div>
-      <br/> */}
     </div>
   )
 }
