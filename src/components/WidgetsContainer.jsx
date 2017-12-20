@@ -1,6 +1,6 @@
 import React from 'react';
 import Paper from 'material-ui/Paper';
-
+import PropTypes from 'prop-types';
 import Widget from './Widget';
 
 
@@ -31,8 +31,15 @@ const WidgetsContainer = ({ editMode, widgets, up }) => (
             component={widget.component}
           />
       );
-}
+} return null;
     })}
   </Paper>
 );
 export default WidgetsContainer;
+
+WidgetsContainer.propTypes = {
+  editMode: PropTypes.bool,
+  widgets: PropTypes.array,
+  up: PropTypes.func,
+
+};

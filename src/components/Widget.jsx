@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import IconButton from 'material-ui/IconButton';
 import Remove from 'material-ui/svg-icons/action/delete';
 import { Card } from 'material-ui/Card';
@@ -33,3 +34,11 @@ const Widget = ({
   </Card>
 );
 export default Widget;
+
+Widget.propTypes = {
+  index: PropTypes.number,
+  up: PropTypes.func,
+  editMode: PropTypes.bool,
+  component: PropTypes.element,
+  className: PropTypes.string,
+};

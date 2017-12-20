@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import AppBar from 'material-ui/AppBar';
 import ModeEdit from 'material-ui/svg-icons/editor/mode-edit';
 import IconButton from 'material-ui/IconButton';
@@ -22,3 +24,8 @@ class AppNav extends React.Component {
   }
 }
 export default AppNav;
+AppNav.propTypes = {
+  ToggleEditMode: PropTypes.func,
+  data: PropTypes.array,
+  addRemoveWidgets: PropTypes.func,
+};

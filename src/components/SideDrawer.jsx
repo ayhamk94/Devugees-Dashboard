@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 import { List, ListItem } from 'material-ui/List';
 import Subheader from 'material-ui/Subheader';
 import AddCircle from 'material-ui/svg-icons/content/add-circle';
@@ -37,7 +37,7 @@ export default class SideDrawer extends React.Component {
 
                       />
                     );
-                  }
+                  } return null;
                 })}
           </List>
         </Drawer>
@@ -45,3 +45,7 @@ export default class SideDrawer extends React.Component {
     );
   }
 }
+SideDrawer.propTypes = {
+  widgets: PropTypes.array,
+  up: PropTypes.func,
+};

@@ -16,7 +16,7 @@ const widgets = [
     name: 'Weather',
     component: <Weather />,
     className: 'small',
-    id: 'ddw01',
+    id: 'ddw013245123',
     mounted: true,
     developerName: 'Ayham'
   },
@@ -24,7 +24,7 @@ const widgets = [
     name: 'News',
     component: <News />,
     className: 'small',
-    id: 'ddw01',
+    id: 'ddn0112315',
     mounted: true,
     developerName: 'Maxi'
   },
@@ -32,7 +32,7 @@ const widgets = [
     name: 'Clock',
     component: <Clock />,
     className: 'small',
-    id: 'ddc0',
+    id: 'ddc0123125512',
     mounted: true,
     developerName: 'Axel'
 
@@ -41,7 +41,7 @@ const widgets = [
     name: 'Activity',
     component: <Activity />,
     className: 'medium',
-    id: 'dda0',
+    id: 'dda00283408',
     mounted: false,
     developerName: 'Ayham & Tommey'
 
@@ -50,7 +50,7 @@ const widgets = [
     name: 'Trello',
     component: <Trello />,
     className: 'small',
-    id: 'ddt0',
+    id: 'ddt089127389',
     mounted: false,
     developerName: 'Tommey'
 
@@ -59,7 +59,7 @@ const widgets = [
     name: 'Notes',
     component: <Notes />,
     className: 'medium',
-    id: 'ddn0',
+    id: 'ddn01938573237',
     mounted: false,
     developerName: 'Axel'
 
@@ -68,7 +68,7 @@ const widgets = [
     name: 'Movie',
     component: <Movie />,
     className: 'medium',
-    id: 'ddm0',
+    id: 'ddm07816239823470',
     mounted: true,
     developerName: 'Axel'
 
@@ -77,7 +77,7 @@ const widgets = [
     name: 'Decider',
     component: <Decider />,
     className: 'small',
-    id: 'ddd0',
+    id: 'ddd01928738924730',
     mounted: true,
     developerName: 'Tommey'
 
@@ -95,7 +95,7 @@ const widgets = [
     name: 'Schedule',
     component: <Schedule />,
     className: 'small',
-    id: 'dds01',
+    id: 'dds0119723809823876243',
     mounted: true,
     developerName: 'Oliver'
   }
