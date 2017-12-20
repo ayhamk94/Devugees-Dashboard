@@ -103,7 +103,7 @@ const widgets = [
   {
     name: 'Quiz',
     component: <Quiz />,
-    className: 'big',
+    className: 'medium',
     id: 'ddqz',
     mounted: true,
     developerName: 'Nabeel'

@@ -86,7 +86,7 @@ class App extends React.Component {
 
     return (
 
-      <div className="App">
+      <div className="quizApp">
         <div className="full-width">
           <Tabs onChange={this.handleChange} value={this.state.slideIndex} >
             <Tab label="Start" value={0} />
