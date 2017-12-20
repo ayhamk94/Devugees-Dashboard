@@ -64,18 +64,17 @@ export default class Clock extends Component {
 
     this.setState({ sec: deg.sec });
     this.setState({ min: deg.min });
-    this.setState({ hours: deg.hours });
+    this.setState({ hours: deg.hour });
   }
   render() {
     const {
-      day, month, date, year, hour, min, sec
+      day, month, date, year, hours, min, sec
     } = this.state;
-
     return (
       <div className="clock-main">
         <div className="clock-wrapper" key="clock">
           <div className="clock-face">
-            <div className="clock hour" style={{ transform: `rotate(${hour}deg` }} />
+            <div className="clock hour" style={{ transform: `rotate(${hours}deg` }} />
             <div className="clock min" style={{ transform: `rotate(${min}deg` }} />
             <div className="clock second" style={{ transform: `rotate(${sec}deg` }} />
           </div>
