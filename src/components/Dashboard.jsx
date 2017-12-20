@@ -28,7 +28,8 @@ const Dashboard = ({
         widgets={data}
       />
     </Paper>
-  );
+
+    );
 
 export default Dashboard;
 

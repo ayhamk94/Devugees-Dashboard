@@ -1,0 +1,8 @@
+.App {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.style-override> div>div> div{
+  padding-right:0 !important;
+}
