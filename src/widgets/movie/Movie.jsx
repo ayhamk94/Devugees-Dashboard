@@ -52,6 +52,7 @@ export default class Movie extends Component {
       showStatus: false,
       showIndicators: false,
       useKeyboardArrows: true,
+      showThumbs: false,
       autoPlay: true,
       interval: 10000,
       stopOnHover: true,
