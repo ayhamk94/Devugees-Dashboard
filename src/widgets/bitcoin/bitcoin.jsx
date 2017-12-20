@@ -1,9 +1,7 @@
 import React from 'react';
 import { List, ListItem } from 'material-ui/List';
-import Divider from 'material-ui/Divider';
-import ActionInfo from 'material-ui/svg-icons/action/info';
-import Spinner from '../../components/Spinner';
 import Subheader from 'material-ui/Subheader';
+import Spinner from '../../components/Spinner';
 import bitCoinWidget from './Bitcoin-icon.png';
 
 const styles = {
@@ -25,7 +23,6 @@ export default class Bitcoin extends React.Component {
 
   render() {
     const { data } = this.state;
-    console.log(data);
     return (
       <div style={{ height: '100%' }}>
         {
@@ -33,7 +30,7 @@ export default class Bitcoin extends React.Component {
           <div>
             <div style={{ display: 'flex', alignItems: 'center' }}>
 
-              <span><img style={{ width: '64px', height: '64px' }} src={bitCoinWidget} /></span>
+              <span><img style={{ width: '64px', height: '64px' }} alt="bitcoin icon" src={bitCoinWidget} /></span>
               <h1>Rate</h1>
             </div>
 

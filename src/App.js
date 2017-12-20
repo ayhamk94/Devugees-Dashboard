@@ -1,7 +1,7 @@
 import React from 'react';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import { blue500, white, darkBlack } from 'material-ui/styles/colors';
+import { blue500, darkBlack } from 'material-ui/styles/colors';
 import Dashboard from './components/Dashboard';
 import AppNav from './components/Nav';
 import widgetsData from './data';
