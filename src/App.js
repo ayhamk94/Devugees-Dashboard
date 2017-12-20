@@ -23,46 +23,43 @@ class App extends React.Component {
     super(props);
     this.state = {
       editMode: false,
-      widgets: [],
-      mounted: []
+      widgets: []
     };
   }
   componentWillMount() {
     this.setState({ widgets: widgetsData });
+    this.handleLocal()
+  }
 
+  handleLocal() {
     if (!localStorage.getItem('mounted')) {
       this.saveLocal(widgetsData)
-    } else {
-      const mounted = JSON.parse(localStorage.getItem('mounted'))
-      this.setState({ mounted })
+    }
+    else {
+      this.updateLocal(widgetsData, JSON.parse(localStorage.getItem('mounted')))
     }
   }
-  handleLocalStorate(action){
-    this.saveLocal(action)
-  }
-  saveLocal(widgets){
-    const mounted = widgets.filter(w => w.mounted).map(w => w.id)
+  saveLocal(local){
+    const mounted = local.filter(w => w.mounted).map(w => w.id)
     localStorage.setItem('mounted', JSON.stringify(mounted))
-    this.setState({ mounted })
   }
-
-  componentDidMount(){
-    const { mounted } = this.state
-    console.log(mounted);
+  updateLocal(widget, mounted){
+    const local = widget
+    local.map((a, i) => mounted.includes(a.id) ? local[i].mounted = true : local[i].mounted = false)
   }
 
   addRemoveWidgets(index) {
     const d = this.state.widgets;
     d[index].mounted = !d[index].mounted;
     this.setState({ widgets: d });
-    this.handleLocalStorate(d)
+    this.saveLocal(d)
   }
 
 
   ToggleEditMode = () => { this.setState({ editMode: !this.state.editMode }); }
 
   render() {
-    const { widgets, editMode, drawerOpen, mounted } = this.state;
+    const { widgets, editMode } = this.state;
     return (
       <div className="App">
         <MuiThemeProvider muiTheme={appTheme}>
