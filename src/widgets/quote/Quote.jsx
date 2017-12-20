@@ -2,6 +2,8 @@ import React from 'react';
 import Spinner from '../../components/Spinner';
 import './quote.css';
 
+import { cors } from '../../utils.js'
+
 export default class Quote extends React.Component {
   constructor(props) {
     super(props);
@@ -9,7 +11,7 @@ export default class Quote extends React.Component {
   }
 
   componentDidMount() {
-    const url = 'http://quotes.rest/qod.json';
+    const url = `${cors}http://quotes.rest/qod.json`;
     const req = new Request(url);
     const existenQuote = JSON.parse(localStorage.getItem('quote'));
 
