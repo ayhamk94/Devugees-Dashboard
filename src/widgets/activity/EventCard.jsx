@@ -24,6 +24,7 @@ const EventCard = (props) => {
   }
   return [
     <Card
+      key='card'
       style={{
         marginTop: '5px',
         borderRadius: '0.2rem',
@@ -40,7 +41,7 @@ const EventCard = (props) => {
         {cardText}
       </CardText>
     </Card>,
-    <Divider />
+    <Divider key='divider'/>
   ];
 };
 

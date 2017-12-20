@@ -11,11 +11,13 @@ class AppNav extends React.Component {
     const { ToggleEditMode, data, addRemoveWidgets } = this.props;
     return [
       <AppBar
+        key='AppBar'
         title="St. Helens Dashboard"
         iconElementRight={<IconButton onClick={ToggleEditMode}><ModeEdit /></IconButton>}
         onLeftIconButtonClick={() => this.refs.sideDrawer.handleToggle()}
       />,
       <SideDrawer
+        key='SideDrawer'
         ref="sideDrawer"
         up={data => addRemoveWidgets(data)}
         widgets={data}
