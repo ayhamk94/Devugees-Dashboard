@@ -6,7 +6,10 @@ const style = {
     width: '100%',
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    position: 'absolute',
+    top: 0,
+    left: 0
   }
 };
 
