@@ -3,8 +3,8 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Dashboard from './components/Dashboard';
 import AppNav from './components/Nav';
+import widgetsData from './data';
 import './App.css';
-import widgets from './data';
 
 
 const appTheme = getMuiTheme({
@@ -27,7 +27,7 @@ class App extends React.Component {
     };
   }
   componentWillMount() {
-    this.setState({ widgets });
+    this.setState({ widgets: widgetsData });
   }
 
   addRemoveWidgets(index) {
@@ -40,7 +40,7 @@ class App extends React.Component {
   ToggleEditMode = () => { this.setState({ editMode: !this.state.editMode }); }
 
   render() {
-    const { widgets, editMode, drawerOpen } = this.state;
+    const { widgets, editMode } = this.state;
     return (
       <div className="App">
         <MuiThemeProvider muiTheme={appTheme}>
