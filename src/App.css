@@ -23,22 +23,33 @@
 .big {
   height: 400px;
   width: 99%;
-
   margin: 5px 0.5% 5px 0.5%;
 }
 .medium {
   height: 400px;
   width: 49%;
   margin: 5px 0.5% 5px 0.5%;
-
+}
+@media(max-width: 996px) {
+  .medium {
+    width: 99%;
+  }
 }
 .small {
   height: 400px;
   width: 24%;
   margin: 5px 0.5% 5px 0.5%;
-
 }
-
+@media(max-width: 996px) {
+  .small {
+    width: 49%;
+  }
+}
+@media(max-width: 556px) {
+  .small {
+    width: 99%;
+  }
+}
 a {
   text-decoration: none;
   color: #2196F3;

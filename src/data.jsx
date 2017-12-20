@@ -9,7 +9,8 @@ import Decider from './widgets/decider/Decider';
 import News from './widgets/news/News';
 import Quote from './widgets/quote/Quote';
 import Schedule from './widgets/schedule/Schedule';
-
+import Bitcoin from './widgets/bitcoin/bitcoin';
+import Quiz from './widgets/quiz/Quiz';
 
 const widgets = [
   {
@@ -82,15 +83,15 @@ const widgets = [
     developerName: 'Tommey'
 
   },
-  // {
-  //   name: 'Quote',
-  //   component: <Quote />,
-  //   className: 'small',
-  //   id: 'ddq0',
-  //   mounted: true,
-  //   developerName: 'Maxi'
-  //
-  // },
+  {
+    name: 'Quote',
+    component: <Quote />,
+    className: 'small',
+    id: 'ddq0',
+    mounted: true,
+    developerName: 'Maxi'
+
+  },
   {
     name: 'Schedule',
     component: <Schedule />,
@@ -98,6 +99,24 @@ const widgets = [
     id: 'dds0119723809823876243',
     mounted: true,
     developerName: 'Oliver'
-  }
+  },
+  {
+    name: 'Quiz',
+    component: <Quiz />,
+    className: 'medium',
+    id: 'ddqz',
+    mounted: true,
+    developerName: 'Nabeel'
+  },
+   {
+    name: 'Bitcoin',
+    component: <Bitcoin />,
+    className: 'small',
+    id: 'dddbit01',
+    mounted: true,
+    developerName: 'Asjad'
+  },
+
+   
 ];
 export default widgets;
