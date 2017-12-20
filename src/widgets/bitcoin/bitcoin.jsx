@@ -1,5 +1,9 @@
 import React from 'react';
+import {List, ListItem} from 'material-ui/List';
+import Divider from 'material-ui/Divider';
+import ActionInfo from 'material-ui/svg-icons/action/info';
 import Spinner from '../../components/Spinner';
+
 
 const styles = {
   rate: {
@@ -28,10 +32,12 @@ export default class Bitcoin extends React.Component {
           <div>
             <h1>Bitcoin Rate</h1>
             <div style={styles.rate}>
-              Rate:
-              <div>
-                <span><strong>{data.bpi.EUR.rate.toString()}</strong><strong> €</strong></span>
-              </div>
+            <List>
+            Rate:
+                <ListItem primaryText={data.bpi.USD.rate.toString()+" $"}  />
+                <ListItem primaryText={data.bpi.EUR.rate.toString()+" €"} />
+                <ListItem primaryText={data.bpi.GBP.rate.toString()+" £"} />
+              </List>
             <div>Updated: <br/> {data.time.updated}</div>
               <br/>
               <br/>
