@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import moment               from 'moment';
-import Spinner              from '../../components/Spinner';
+import moment from 'moment';
+import Spinner from '../../components/Spinner';
 
-import List                 from './List';
-import defaultData          from './ScheduleModel';
-import './schedule.css'
+import List from './List';
+import defaultData from './ScheduleModel';
+import './schedule.css';
 
 export default class Schedule extends Component {
   constructor() {
@@ -21,22 +21,22 @@ export default class Schedule extends Component {
   }
 
   componentDidMount() {
-    this.setState()
+    this.setState();
     if (this.state.units) {
       this.setUpHandler();
-      setInterval(this.updateHandler, 1000*60);
+      setInterval(this.updateHandler, 1000 * 60);
     }
     window.onfocus = () => {
       this.setUpHandler();
-    }
+    };
   }
 
   getMinutes(milliseconds) {
-    return (milliseconds / 1000) / 60
+    return (milliseconds / 1000) / 60;
   }
 
   setUpHandler = () => {
-    const state = this.state
+    const state = this.state;
 
     const startTime = state.units[0].start.split(':');
     const scheduleStart = moment()
@@ -47,8 +47,8 @@ export default class Schedule extends Component {
     const endTime = state.units[state.units.length - 1].end.split(':');
     const scheduleEnd = moment()
       .hour(endTime[0])
-        .minute(endTime[1])
-        .seconds('0');
+      .minute(endTime[1])
+      .seconds('0');
 
     const time = scheduleEnd - scheduleStart;
     const minutes = this.getMinutes(time);
@@ -65,24 +65,24 @@ export default class Schedule extends Component {
         perMinute: handlerPerMinute,
         position: initialHandlerPosition
       }
-    })
+    });
   }
 
   updateHandler = () => {
-    const handler = {...this.state.handler};
-    handler.position = handler.position + handler.perMinute
-    this.setState({ handler })
+    const handler = { ...this.state.handler };
+    handler.position += handler.perMinute;
+    this.setState({ handler });
   }
 
   dataReady(data) {
     return data && data.length === 0;
   }
 
-  getHeightOfDomNode( node ){
+  getHeightOfDomNode(node) {
     if (node !== undefined && node !== null) {
-      let height = node.clientHeight;
-      if ( this.state['listHeight'] !== height ) {
-        this.setState({ listHeight: height })
+      const height = node.clientHeight;
+      if (this.state.listHeight !== height) {
+        this.setState({ listHeight: height });
       }
     }
   }
@@ -92,14 +92,14 @@ export default class Schedule extends Component {
 
     return (
       this.dataReady(units) ?
-      <Spinner />
-      :
-      <List
-        data={units}
-        handlerPosition={handler.position}
+        <Spinner />
+        :
+        <List
+          data={units}
+          handlerPosition={handler.position}
         // why god? ...why?   ¯\_(ツ)_/¯
-        scheduleRef={(listNode) => this.getHeightOfDomNode(listNode)}
-      />
-    )
+          scheduleRef={listNode => this.getHeightOfDomNode(listNode)}
+        />
+    );
   }
 }

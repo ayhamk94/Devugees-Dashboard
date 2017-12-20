@@ -1,35 +1,35 @@
 import React from 'react';
 import { List } from 'material-ui/List';
+import Divider from 'material-ui/Divider';
 import CircularProgress from 'material-ui/CircularProgress';
 import Spinner from '../../components/Spinner';
 import './activity.css';
 import EventCard from './EventCard';
-import Divider from 'material-ui/Divider';
+
 
 export default class Activity extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { data: {} };
+    this.state = { githubData: {} };
   }
   componentDidMount() {
     const url = 'https://api.github.com/repos/ayhamk94/Devugees-Dashboard/events';
     fetch(url).then(resp => resp.json()).then((activityData) => {
-      this.setState({ data: activityData });
-      // console.log(this.state.data);
+      this.setState({ githubData: activityData });
     });
   }
 
   render() {
-    const { data } = this.state;
+    const { githubData } = this.state;
     return (
       <div className="github-activity">
-        <h3>{data[0] ? data[0].repo.name.slice(9, data[0].repo.name.length) : <Spinner />}</h3>
+        <h3>{githubData[0] ? githubData[0].repo.name.slice(9, githubData[0].repo.name.length) : <Spinner />}</h3>
         <Divider />
         <List>
           {
-            data.length > 1 ?
+            githubData.length > 1 ?
 
-            data.map((activity) => {
+            githubData.map((activity) => {
               if (activity.type === 'PullRequestEvent' || activity.type === 'CreateEvent') {
                 return <EventCard key={activity.id} activity={activity} />;
               }

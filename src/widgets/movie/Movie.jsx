@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Spinner from '../../components/Spinner';
 import PropTypes from 'prop-types';
-
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
-
-
-import 'react-responsive-carousel/lib/styles/carousel.min.css'
-import './movie.css'
+import Spinner from '../../components/Spinner';
+import './movie.css';
 
 
 const url = 'https://api.themoviedb.org/3';
@@ -47,11 +44,11 @@ export default class Movie extends Component {
   componentDidMount() {
     this.request();
   }
-  request(){
-    getMovie("/movie/now_playing?&").then(res => this.setState({ data: res.results }))
+  request() {
+    getMovie('/movie/now_playing?&').then(res => this.setState({ data: res.results }));
   }
   render() {
-    const { data } = this.state
+    const { data } = this.state;
     const settings = {
       showStatus: false,
       showIndicators: false,
@@ -62,15 +59,15 @@ export default class Movie extends Component {
       transitionTime: 500,
       emulateTouch: true,
       infiniteLoop: true
-    }
+    };
     return (
       <div className="movie-main">
         {
           data && data.length === 0 ?
-          <Spinner /> :
-          <Carousel {...settings}>
-            {data.map((movie, i) => <ShowMovie key={i} data={movie} />)}
-          </Carousel>
+            <Spinner /> :
+            <Carousel {...settings}>
+              {data.map((movie, i) => <ShowMovie key={i} data={movie} />)}
+            </Carousel>
         }
       </div>
     );

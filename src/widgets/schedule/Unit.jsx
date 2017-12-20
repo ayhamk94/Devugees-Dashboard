@@ -1,12 +1,12 @@
-import React from 'react'
+import React from 'react';
 
 function highlight(type) {
-  return type === 'lesson' ? 'highlighted shadow' : ''
+  return type === 'lesson' ? 'highlighted shadow' : '';
 }
 
-const Unit = (props) => (
+const Unit = props => (
   <div
-    className={ highlight(props.data.type) }
+    className={highlight(props.data.type)}
     style={{
       flexBasis: props.data.minutes,
       zIndex: props.index + 1
@@ -16,6 +16,6 @@ const Unit = (props) => (
       { props.data.type === 'lesson' ? props.data.body : '' }
     </span>
   </div>
-)
+);
 
-export default Unit
+export default Unit;
