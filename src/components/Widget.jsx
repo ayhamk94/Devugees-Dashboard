@@ -7,7 +7,7 @@ import { Card } from 'material-ui/Card';
 const styles = {
   contianer: {
     padding: '1rem',
-    overflowY: 'scroll',
+    overflowY: 'auto',
     position: 'relative'
   },
   editButton: {
