@@ -97,7 +97,7 @@ const widgets = [
   {
     name: 'Schedule',
     component: <Schedule />,
-    className: 'small',
+    className: 'small schedule-card',
     id: 'dds0119723809823876243',
     mounted: true,
     developerName: 'Oliver'

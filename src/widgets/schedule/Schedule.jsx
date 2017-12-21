@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component }  from 'react';
 import moment from 'moment';
 import Spinner from '../../components/Spinner';
 
@@ -16,23 +16,23 @@ export default class Schedule extends Component {
       },
       startTime: 0,
       endTime: 0,
-      listHeight: 368
+      listHeight: 392
     };
   }
 
   componentDidMount() {
-    this.setState();
     if (this.state.units) {
       this.setUpHandler();
-      setInterval(this.updateHandler, 1000 * 60);
+      setInterval(this.updateHandler, (1000 * 60) );
     }
+
     window.onfocus = () => {
       this.setUpHandler();
     };
   }
 
   getMinutes(milliseconds) {
-    return (milliseconds / 1000) / 60;
+    return parseInt( (milliseconds / 1000) / 60 );
   }
 
   setUpHandler = () => {
@@ -55,7 +55,8 @@ export default class Schedule extends Component {
 
     const handlerPerMinute = state.listHeight / minutes;
     const now = moment();
-    const initialHandlerPosition = this.getMinutes(now - scheduleStart) * handlerPerMinute;
+
+    const initialHandlerPosition = (this.getMinutes(now - scheduleStart)) * handlerPerMinute;
 
     this.setState({
       totalMinutes: minutes,
@@ -80,7 +81,7 @@ export default class Schedule extends Component {
 
   getHeightOfDomNode(node) {
     if (node !== undefined && node !== null) {
-      const height = node.clientHeight;
+      const height =  node.clientHeight;
       if (this.state.listHeight !== height) {
         this.setState({ listHeight: height });
       }
@@ -97,7 +98,7 @@ export default class Schedule extends Component {
         <List
           data={units}
           handlerPosition={handler.position}
-        // why god? ...why?   ¯\_(ツ)_/¯
+          // why god? ...why?   ¯\_(ツ)_/¯
           scheduleRef={listNode => this.getHeightOfDomNode(listNode)}
         />
     );
