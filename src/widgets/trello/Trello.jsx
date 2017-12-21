@@ -1,18 +1,24 @@
 import React from 'react';
 import Trello from 'node-trello';
 import { List, ListItem } from 'material-ui/List';
-
+import Done from 'material-ui/svg-icons/action/done';
+import Report from 'material-ui/svg-icons/action/report-problem';
+import Setting from 'material-ui/svg-icons/action/settings';
+import {BottomNavigation, BottomNavigationItem} from 'material-ui/BottomNavigation';
 import './trello.css';
 import MainInfo from './mainInfo';
 import Spinner from '../../components/Spinner';
 import ApiKey from './ApiKey';
 
+const done = <Done/>
+const report_problem = <Report/>
+const settings = <Setting/>
 
 export default class Activity extends React.Component {
   constructor(props) {
     super(props);
     this.handleData = this.handleData.bind(this);
-    this.state = { trello: [] };
+    this.state = { trello: [], selectedIndex: 0, };
   }
   componentWillMount() {
     const local = localStorage.getItem('trello-db');
@@ -44,6 +50,9 @@ export default class Activity extends React.Component {
       });
     }
   }
+
+  select = (index) => this.setState({selectedIndex: index});
+
   render() {
     const style = {
       padding: 0,
@@ -54,27 +63,27 @@ export default class Activity extends React.Component {
       position: 'relative'
     };
     const { trello } = this.state;
+
     return (
       <div className="trello-widget">
         <h1>Trello</h1>
-
-
         <List style={style}>
-          { trello && (
-          <ListItem containerElement={<ApiKey data={[trello]} addTrelloInfo={this.handleData} />} />
-        )}
           {
-        trello && trello.length !== 0 ?
-
-          <div>
-            {trello.map(list => (
-              <MainInfo key={list.id} list={list} />
-          ))}
-          </div>
-
+          trello && trello.length !== 0 ?
+            <div>
+              {trello.map(( list, index ) => (
+                <div>
+                  <MainInfo key={list.id} list={list} />
+                </div>
+              ))}
+            </div>
           :
-          <Spinner />
-      }
+          <div>
+            { trello && (
+            <ListItem containerElement={<ApiKey data={[trello]} addTrelloInfo={this.handleData} />} />
+            )}
+          </div>
+          }
         </List>
       </div>
     );
