@@ -31,6 +31,7 @@ export default class Clock extends Component {
       minutes: this.clock.minutes,
       seconds: this.clock.seconds
     };
+    this.tick = setInterval(this.interval, 1000);
 
     this.state = {
       day: this.clock.day,
@@ -43,9 +44,13 @@ export default class Clock extends Component {
     };
   }
   componentDidMount() {
-    setInterval(this.interval, 1000);
+    this.tick
+  }
+  componentWillUnmount(){
+    clearInterval(this.tick)
   }
   interval = () => {
+    console.log('hola');
     const { hours, minutes, seconds } = clock();
     this.time.hours = hours;
     this.time.minutes = minutes;
