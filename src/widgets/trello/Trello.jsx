@@ -4,11 +4,16 @@ import { List, ListItem } from 'material-ui/List';
 import Done from 'material-ui/svg-icons/action/done';
 import Report from 'material-ui/svg-icons/action/report-problem';
 import Setting from 'material-ui/svg-icons/action/settings';
+import FileCloudDownload from 'material-ui/svg-icons/file/cloud-download';
 import {BottomNavigation, BottomNavigationItem} from 'material-ui/BottomNavigation';
 import './trello.css';
 import MainInfo from './mainInfo';
 import Spinner from '../../components/Spinner';
 import ApiKey from './ApiKey';
+import Dialog from 'material-ui/Dialog';
+import FlatButton from 'material-ui/FlatButton';
+import RaisedButton from 'material-ui/RaisedButton';
+
 
 const done = <Done/>
 const report_problem = <Report/>
@@ -18,7 +23,7 @@ export default class Activity extends React.Component {
   constructor(props) {
     super(props);
     this.handleData = this.handleData.bind(this);
-    this.state = { trello: [], selectedIndex: 0, };
+    this.state = { trello: [], selectedIndex: 0, open: false,};
   }
   componentWillMount() {
     const local = localStorage.getItem('trello-db');
@@ -33,6 +38,14 @@ export default class Activity extends React.Component {
   handleState(trello) {
     this.setState({ trello });
   }
+
+  handleOpen = () => {
+    this.setState({open: true});
+  };
+
+  handleClose = () => {
+    this.setState({open: false});
+  };
 
   handleData = () => {
     const trello = JSON.parse(localStorage.getItem('trello-db'));
@@ -54,19 +67,38 @@ export default class Activity extends React.Component {
   select = (index) => this.setState({selectedIndex: index});
 
   render() {
+     const actions = [
+      <FlatButton
+        label="Cancel"
+        primary={true}
+        onClick={this.handleClose}
+      />,
+   ];
     const style = {
       padding: 0,
       textAlign: 'left',
       height: '100%',
       display: 'flex',
       flexDirection: 'column',
-      position: 'relative'
+      position: 'relative',
+      customContentStyle: {
+        borderRadius: 50,
+        maxWidth: 'none',
+      },
+      button: {
+        marginBottom: 20
+      }
     };
     const { trello } = this.state;
 
     return (
       <div className="trello-widget">
-        <h1>Trello</h1>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <h1 style={{marginTop: 0}}>Trello</h1>
+          
+
+          <Setting onClick={this.handleOpen} />
+        </div>
         <List style={style}>
           {
           trello && trello.length !== 0 ?
@@ -79,13 +111,21 @@ export default class Activity extends React.Component {
             </div>
           :
           <div>
-            { trello && (
-            <ListItem containerElement={<ApiKey data={[trello]} addTrelloInfo={this.handleData} />} />
-            )}
+            No Trello settings setup, click on the small cog to connetct to Trello
           </div>
           }
         </List>
-      </div>
+        <Dialog
+           title="Trello Settings"
+           actions={actions}
+           modal={false}
+           open={this.state.open}
+           contentStyle={style.customContentStyle}
+           onRequestClose={this.handleClose}
+        >
+          <ApiKey data={[trello]} addTrelloInfo={this.handleData} />
+         </Dialog>
+       </div>
     );
   }
 }

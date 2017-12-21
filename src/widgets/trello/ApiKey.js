@@ -39,17 +39,14 @@ class ApiKey extends React.Component {
       board_id: '',
       error: '',
       snackbar: false,
-      expanded: false
     };
   }
 
 
-  handleExpand(expanded) {
-    this.setState({ expanded });
-  }
   handleError = (snackbar, error) => {
     this.setState({ snackbar, error });
   }
+
   validate(api_key, token, board_id) {
     if (api_key.length === 0) {
       this.handleError(true, 'noTitle');
@@ -70,15 +67,16 @@ class ApiKey extends React.Component {
   }
   componentWillMount() {
     const trello = JSON.parse(localStorage.getItem('trello-db'));
-
     if (trello) {
       this.setState({ api_key: trello.api_key, token: trello.token, board_id: trello.board_id });
     }
   }
+
   handleChange = (event) => {
     const { id, value } = event.target;
     id === 'api_key' ? this.setState({ api_key: value }) : id === 'board_id' ? this.setState({ board_id: value }) : this.setState({ token: value });
   }
+
   handleSubmit = () => {
     const { api_key, token, board_id } = this.state;
     let data = this.props.data;
@@ -92,7 +90,6 @@ class ApiKey extends React.Component {
 
     localStorage.setItem('trello-db', JSON.stringify(data));
     this.props.addTrelloInfo();
-    this.handleExpand(false);
   }
 
   render() {
@@ -102,19 +99,15 @@ class ApiKey extends React.Component {
 
     return (
       <Card
-        expanded={this.state.expanded}
-        onExpandChange={e => this.handleExpand(e)}
         key="card"
         style={{ boxShadow: '0 0' }}
       >
         <CardHeader
           title="Settings"
           titleStyle={{ padding: 0 }}
-          actAsExpander
-          // showExpandableButton
           style={{ textAlign: 'left' }}
         />
-        <CardText expandable>
+        <CardText >
           <TextField
             id="api_key"
             floatingLabelText="Api Key"
