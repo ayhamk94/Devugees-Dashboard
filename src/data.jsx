@@ -86,7 +86,7 @@ const widgets = [
   {
     name: 'Quote',
     component: <Quote />,
-    className: 'small',
+    className: 'small centerd',
     id: 'ddq0',
     mounted: true,
     developerName: 'Maxi'
