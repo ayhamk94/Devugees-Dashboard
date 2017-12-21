@@ -11,8 +11,8 @@ const WidgetsContainer = ({ editMode, widgets, up }) => (
       backgroundColor: '#b3b3b3',
       width: '100%',
       padding: '10px',
-      height: '90vh',
-      overflowY: 'scroll',
+      height: '95vh',
+      overflowY: 'auto',
       alignItems: 'center',
       display: 'flex',
       justifyContent: 'flex-start',
@@ -23,6 +23,7 @@ const WidgetsContainer = ({ editMode, widgets, up }) => (
       if (widget.mounted) {
         return (
           <Widget
+            name={widget.name}
             index={index}
             up={up}
             editMode={editMode}
