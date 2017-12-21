@@ -44,6 +44,7 @@ export default class Activity extends React.Component {
     const { data } = this.state;
     const actions = [
       <FlatButton
+        key="FlatButton"
         label="close"
         primary
         keyboardFocused

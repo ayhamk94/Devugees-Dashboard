@@ -20,8 +20,8 @@ const MainInfo = () => {
             </div>
           </div>
           }
-        nestedItems={list.cards.map(p => (
-          <a href={p.url} target="_blank">
+        nestedItems={list.cards.map((p, i) => (
+          <a href={p.url} target="_blank" key={i}>
             <ListItem
               style={{
  paddingTop: 5, paddingBottom: 5, whiteSpace: 'pre-wrap', fontSize: '14px', fontWeight: 400
