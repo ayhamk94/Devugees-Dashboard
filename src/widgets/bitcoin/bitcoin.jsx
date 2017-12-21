@@ -13,12 +13,12 @@ const styles = {
 export default class Bitcoin extends React.Component {
   constructor(props) {
     super(props);
-    this.tick = setInterval(this.interval, 60000)
+    this.tick = () => setInterval(this.interval, 60000)
     this.state = { data: [] };
   }
   componentDidMount() {
     this.interval()
-    this.tick
+    this.tick()
   }
   componentWillUnmount(){
     clearInterval(this.tick)
