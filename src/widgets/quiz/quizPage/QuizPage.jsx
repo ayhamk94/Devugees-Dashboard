@@ -1,6 +1,7 @@
 import React from 'react';
 import './QuizPage.css';
 import RaisedButton from 'material-ui/RaisedButton';
+import { Card, CardActions } from 'material-ui/Card';
 
 
 class QuizPage extends React.Component {
@@ -36,17 +37,17 @@ class QuizPage extends React.Component {
   }
 
   render() {
-    // const divStyle = { width: `${(this.state.question - 1) * 10}%` };
     return (
-
       <div className="card text-center container noselect">
         <div className="card-header">Question <span>{this.state.question}</span></div>
         <div className="card-block">
           <p className="card-text-question">{this.props.questionArr[this.state.question - 1].question}</p>
         </div>
         <div>
-          <RaisedButton primary onClick={e => this.handleValidate(true)}>Right</RaisedButton>
-          <RaisedButton secondary onClick={e => this.handleValidate(false)}>Wrong </RaisedButton>
+          <CardActions>
+            <RaisedButton primary={false} onClick={e => this.handleValidate(true)}>Right</RaisedButton>
+            <RaisedButton secondary={true} onClick={e => this.handleValidate(false)}>Wrong </RaisedButton>
+          </CardActions>
         </div>
       </div>
 
