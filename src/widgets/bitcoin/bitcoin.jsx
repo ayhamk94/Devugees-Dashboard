@@ -15,6 +15,10 @@ export default class Bitcoin extends React.Component {
     this.state = { data: [] };
   }
   componentDidMount() {
+    this.interval()
+    setTimeout(this.interval, 60000)
+  }
+  interval = () => {
     const url = 'https://api.coindesk.com/v1/bpi/currentprice.json';
     fetch(url).then(resp => resp.json()).then((bitocoinData) => {
       this.setState({ data: bitocoinData });
