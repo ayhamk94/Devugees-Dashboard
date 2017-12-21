@@ -4,15 +4,15 @@ const ScheduleModel =
       {
         start: '09:00',
         end: '09:45',
-        minutes: 45,
-        body: 'Welcome, Classbook, Repeating things from previous day',
+        minutes:	45,
+        body: 'Welcome and Recap',
         type: 'lesson'
       },
       {
         start: '09:45',
         end: '10:30',
-        minutes: 45,
-        body: 'Live coding, studies, exercises, projects',
+        minutes:	45,
+        body: 'Intro of todays topic',
         type: 'lesson'
       },
       {

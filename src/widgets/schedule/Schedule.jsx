@@ -55,7 +55,8 @@ export default class Schedule extends Component {
 
     const handlerPerMinute = state.listHeight / minutes;
     const now = moment();
-    const initialHandlerPosition = this.getMinutes(now - scheduleStart) * handlerPerMinute;
+    now.hour('18').minute('0').seconds('0')
+    const initialHandlerPosition = (this.getMinutes(now - scheduleStart)) * handlerPerMinute;
 
     this.setState({
       totalMinutes: minutes,
