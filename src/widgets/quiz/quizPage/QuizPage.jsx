@@ -1,8 +1,9 @@
 import React from 'react';
-import './QuizPage.css';
+import Check from 'material-ui/svg-icons/navigation/check';
+import Close from 'material-ui/svg-icons/navigation/close';
 import RaisedButton from 'material-ui/RaisedButton';
-import { Card, CardActions } from 'material-ui/Card';
-
+import { CardActions } from 'material-ui/Card';
+import './QuizPage.css';
 
 class QuizPage extends React.Component {
   constructor(props) {
@@ -45,8 +46,8 @@ class QuizPage extends React.Component {
         </div>
         <div>
           <CardActions>
-            <RaisedButton primary={false} onClick={e => this.handleValidate(true)}>Right</RaisedButton>
-            <RaisedButton secondary={true} onClick={e => this.handleValidate(false)}>Wrong </RaisedButton>
+            <RaisedButton labelPosition="before" icon={<Check />} primary={false} onClick={e => this.handleValidate(true)} />
+            <RaisedButton labelPosition="before" secondary icon={<Close />} onClick={e => this.handleValidate(false)} />
           </CardActions>
         </div>
       </div>
