@@ -50,7 +50,6 @@ export default class Clock extends Component {
     clearInterval(this.tick)
   }
   interval = () => {
-    console.log('hola');
     const { hours, minutes, seconds } = clock();
     this.time.hours = hours;
     this.time.minutes = minutes;
