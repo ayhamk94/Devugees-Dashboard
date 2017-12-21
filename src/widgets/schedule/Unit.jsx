@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function classForType (unit, type, classNames) {
   let classes = ''
@@ -9,7 +10,6 @@ function classForType (unit, type, classNames) {
 }
 
 function checkUnitType (unit, typeToCheck) {
-  console.log(unit.type, typeToCheck, unit.type === typeToCheck)
   return unit.type === typeToCheck ? true : false;
 }
 
@@ -41,3 +41,7 @@ const Unit = props => (
 );
 
 export default Unit;
+
+Unit.propTypes = {
+  data: PropTypes.object.isRequired
+};
