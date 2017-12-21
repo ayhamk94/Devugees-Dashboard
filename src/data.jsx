@@ -12,6 +12,7 @@ import Schedule from './widgets/schedule/Schedule';
 import Bitcoin from './widgets/bitcoin/bitcoin';
 import Quiz from './widgets/quiz/Quiz';
 
+
 const widgets = [
   {
     name: 'Weather',
@@ -30,40 +31,12 @@ const widgets = [
     developerName: 'Maxi'
   },
   {
-    name: 'Clock',
-    component: <Clock />,
-    className: 'small centerd',
-    id: 'ddc0123125512',
+    name: 'Quiz',
+    component: <Quiz />,
+    className: 'medium',
+    id: 'ddqz',
     mounted: true,
-    developerName: 'Axel'
-
-  },
-  {
-    name: 'Activity',
-    component: <Activity />,
-    className: 'medium',
-    id: 'dda00283408',
-    mounted: false,
-    developerName: 'Ayham & Tommey'
-
-  },
-  {
-    name: 'Trello',
-    component: <Trello />,
-    className: 'small',
-    id: 'ddt089127389',
-    mounted: false,
-    developerName: 'Tommey'
-
-  },
-  {
-    name: 'Notes',
-    component: <Notes />,
-    className: 'medium',
-    id: 'ddn01938573237',
-    mounted: false,
-    developerName: 'Axel'
-
+    developerName: 'Nabeel'
   },
   {
     name: 'Movie',
@@ -72,7 +45,38 @@ const widgets = [
     id: 'ddm07816239823470',
     mounted: true,
     developerName: 'Axel'
-
+  },
+  {
+    name: 'Activity',
+    component: <Activity />,
+    className: 'medium',
+    id: 'dda00283408',
+    mounted: false,
+    developerName: 'Ayham & Tommey'
+  },
+  {
+    name: 'Clock',
+    component: <Clock />,
+    className: 'small centerd',
+    id: 'ddc0123125512',
+    mounted: true,
+    developerName: 'Axel'
+  },
+  {
+    name: 'Trello',
+    component: <Trello />,
+    className: 'small',
+    id: 'ddt089127389',
+    mounted: false,
+    developerName: 'Tommey'
+  },
+  {
+    name: 'Notes',
+    component: <Notes />,
+    className: 'medium',
+    id: 'ddn01938573237',
+    mounted: false,
+    developerName: 'Axel'
   },
   {
     name: 'Decider',
@@ -81,7 +85,6 @@ const widgets = [
     id: 'ddd01928738924730',
     mounted: true,
     developerName: 'Tommey'
-
   },
   {
     name: 'Quote',
@@ -90,7 +93,6 @@ const widgets = [
     id: 'ddq0',
     mounted: true,
     developerName: 'Maxi'
-
   },
   {
     name: 'Schedule',
@@ -101,14 +103,6 @@ const widgets = [
     developerName: 'Oliver'
   },
   {
-    name: 'Quiz',
-    component: <Quiz />,
-    className: 'medium',
-    id: 'ddqz',
-    mounted: true,
-    developerName: 'Nabeel'
-  },
-  {
     name: 'Bitcoin',
     component: <Bitcoin />,
     className: 'small',
@@ -116,7 +110,5 @@ const widgets = [
     mounted: true,
     developerName: 'Asjad'
   },
-
-
 ];
 export default widgets;

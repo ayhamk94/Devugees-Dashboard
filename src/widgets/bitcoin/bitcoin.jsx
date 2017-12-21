@@ -13,9 +13,17 @@ const styles = {
 export default class Bitcoin extends React.Component {
   constructor(props) {
     super(props);
+    this.tick = () => setInterval(this.interval, 60000)
     this.state = { data: [] };
   }
   componentDidMount() {
+    this.interval()
+    this.tick()
+  }
+  componentWillUnmount(){
+    clearInterval(this.tick)
+  }
+  interval = () => {
     const url = 'https://api.coindesk.com/v1/bpi/currentprice.json';
     fetch(url).then(resp => resp.json()).then((bitocoinData) => {
       this.setState({ data: bitocoinData });
@@ -39,9 +47,9 @@ export default class Bitcoin extends React.Component {
 
             <div style={styles.rate}>
               <List>
-                <ListItem primaryText={`${data.bpi.USD.rate.toString()} $`} />
-                <ListItem primaryText={`${data.bpi.EUR.rate.toString()} €`} />
-                <ListItem primaryText={`${data.bpi.GBP.rate.toString()} £`} />
+                <ListItem primaryText={`${data.bpi.USD.rate.split("").slice(0, -2).join("")} $`} />
+                <ListItem primaryText={`${data.bpi.EUR.rate.split("").slice(0, -2).join("")} €`} />
+                <ListItem primaryText={`${data.bpi.GBP.rate.split("").slice(0, -2).join("")} £`} />
               </List>
             </div>
             <div>

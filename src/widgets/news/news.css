@@ -1,19 +1,17 @@
 .wrapper-news li.slide {
   background: white;
+  font-weight: 200;
 }
 
-.wrapper-news {
-  height: 100%;
+.titel-news-widget {
+  text-align: center;
 }
-
-.articles {
-  padding: 20px;
-  line-height: 1.2em;
-  font-weight: normal;
+.articles{
+  padding: 6px;
 }
 
 .articles a {
-  color: red;
+  color: var(--main-orange);
   font-weight: 200;
   text-decoration: none;
   -webkit-transition: color .3 ease;
@@ -25,26 +23,42 @@
 }
 
 .news-logo {
-  position: relative;
-  width: 100%;
+  height: 100px;
+  overflow: hidden;
+}
+
+.news-logo img {
+  display: block;
+  width: 100%
 }
 
 .news-title {
-  padding-top: 20px;
-  font-weight: 500 !important;
-  color: red;
-  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 200;
+  padding: 10px;
 }
 
 .articles .news-description {
-  font-size: 13px;
+  font-size: 15px;
+  font-weight: 200;
+  line-height: 1.2em;
   text-align: justify;
-  padding-top: 20px;
+  margin: 10px;
 }
 
 .news-author {
-  color: #636365;
-  font-size: 12px;
+  -webkit-transition: color .3 ease;
+  transition: color .3s ease;
   text-align: right;
-  padding-top: 20px;
+  font-size: 1rem;
+  margin-right: 10px;
+}
+
+.news-author:hover {
+  color: #636365;
+}
+
+.carousel .slide img {
+  height: 100%;
+  object-fit: cover;
 }
