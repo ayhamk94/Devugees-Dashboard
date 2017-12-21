@@ -52,15 +52,10 @@
 }
 a {
   text-decoration: none;
-  color: #2196F3;
+  color: var(--main-orange);
 }
-
-.edit-btn {
-  position: absolute;
-  color:red;
-  top: -10px;
-  z-index: 30;
-}
-.top {
-  z-index: 999999999999
+.centerd {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

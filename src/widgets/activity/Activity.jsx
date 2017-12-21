@@ -22,7 +22,7 @@ export default class Activity extends React.Component {
     const { githubData } = this.state;
     return (
       <div className="github-activity">
-        <h3>{githubData[0] && githubData[0].repo.name.slice(9, githubData[0].repo.name.length)}</h3>
+        <h1 className="main-header">{githubData[0] && githubData[0].repo.name.slice(9, githubData[0].repo.name.length)}</h1>
         <Divider />
         <List>
           {

@@ -16,7 +16,7 @@ const widgets = [
   {
     name: 'Weather',
     component: <Weather />,
-    className: 'small',
+    className: 'small centerd',
     id: 'ddw013245123',
     mounted: true,
     developerName: 'Ayham'
@@ -32,7 +32,7 @@ const widgets = [
   {
     name: 'Clock',
     component: <Clock />,
-    className: 'small',
+    className: 'small centerd',
     id: 'ddc0123125512',
     mounted: true,
     developerName: 'Axel'
@@ -108,7 +108,7 @@ const widgets = [
     mounted: true,
     developerName: 'Nabeel'
   },
-   {
+  {
     name: 'Bitcoin',
     component: <Bitcoin />,
     className: 'small',
@@ -117,6 +117,6 @@ const widgets = [
     developerName: 'Asjad'
   },
 
-   
+
 ];
 export default widgets;
