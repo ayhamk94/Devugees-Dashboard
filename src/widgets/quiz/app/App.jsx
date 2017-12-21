@@ -21,7 +21,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      user: '',
+      user: 'ss',
       page: 'LandingPage',
       score: 0,
       slideIndex: 0,
@@ -115,13 +115,13 @@ class App extends React.Component {
 export default App;
 
 App.propTypes = {
-  user:         PropTypes.string.isRequierd,
+  user:         PropTypes.string,
   diffeculty:   PropTypes.string,
-  questionArr:  PropTypes.array.isRequierd,
+  questionArr:  PropTypes.array,
   score:        PropTypes.number,
-  slideIndex:   PropTypes.number.isRequierd,
-  questionNum:  PropTypes.number.isRequierd,
-  value:        PropTypes.number.isRequierd,
+  slideIndex:   PropTypes.number,
+  questionNum:  PropTypes.number,
+  value:        PropTypes.number,
   onStartgame:  PropTypes.func,
   newGame:      PropTypes.func,
   tryAgain:     PropTypes.func,

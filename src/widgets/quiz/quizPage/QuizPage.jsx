@@ -62,7 +62,7 @@ export default QuizPage;
 QuizPage.propTypes={
   score:          PropTypes.number,
   question:       PropTypes.number,
-  questionArr:    PropTypes.array.isRequierd,
-  quizFinished:   PropTypes.func.isRequierd,
+  questionArr:    PropTypes.array,
+  quizFinished:   PropTypes.func,
   handleValidate: PropTypes.func
 }

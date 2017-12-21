@@ -94,7 +94,7 @@ class LandingPage extends React.Component {
 export default LandingPage;
 
 LandingPage.propTypes={
-  onStartgame:  PropTypes.func,
-  value:        PropTypes.number.isRequierd,
+  value:        PropTypes.number,
   diffeculty:   PropTypes.string,
+  onStartgame:  PropTypes.func,
 }
