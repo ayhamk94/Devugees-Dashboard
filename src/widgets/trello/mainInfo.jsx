@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Divider from 'material-ui/Divider';
 import { ListItem } from 'material-ui/List';
 
-const Link = props => <a href={ props.link }>{ props.children }</a>
+const Link = props => <a target="_blank" href={ props.link }>{ props.children }</a>
 
 class MainInfo extends React.Component {
   render() {

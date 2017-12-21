@@ -16,7 +16,7 @@ const getMovie = (field, append) => axios.get(`${url}${field}${key}&append_to_re
 const ShowMovie = ({ data }) => (
   <div className="movie-wrapper">
     <div className="movie-img">
-      <a href={`https://www.themoviedb.org/movie/${data.id}`}>
+      <a target="_blank" href={`https://www.themoviedb.org/movie/${data.id}`}>
         <img src={img(data.poster_path, 'w600')} className="" alt="" />
       </a>
     </div>
@@ -24,7 +24,7 @@ const ShowMovie = ({ data }) => (
       <h1>{data.original_title}</h1>
       <span>{data.vote_average} ★</span>
       <p>{data.overview}</p>
-      <a href={`https://www.themoviedb.org/movie/${data.id}`}>More info</a>
+      <a target="_blank" href={`https://www.themoviedb.org/movie/${data.id}`}>More info</a>
     </div>
   </div>
 );

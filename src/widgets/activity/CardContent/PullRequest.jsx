@@ -9,12 +9,12 @@ const PullRequest = (props) => {
   return (
     <div className="pull-request">
       <div style={{ display: 'flex', flexDirection: 'column' }}>
-        <h4><a href={htmlUrl}>{title}</a></h4>
+        <h4><a href={htmlUrl} target="_blank">{title}</a></h4>
         <span>Status: {props.payload.action}</span>
         <span>{moment(created_at).fromNow()}</span>
         <span>Branch: {head.ref}</span>
-        <span>Opend by:  <a href={user.html_url}>{user.login} </a></span>
-        { merged ? <span>Merged by: <a href={merged_by.html_url}>{merged_by.login}</a></span>
+        <span>Opend by:  <a href={user.html_url} target="_blank">{user.login} </a></span>
+        { merged ? <span>Merged by: <a href={merged_by.html_url} target="_blank">{merged_by.login}</a></span>
              : null}
       </div>
     </div>
