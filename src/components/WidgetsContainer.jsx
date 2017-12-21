@@ -15,7 +15,7 @@ const WidgetsContainer = ({ editMode, widgets, up }) => (
       overflowY: 'auto',
       alignItems: 'center',
       display: 'flex',
-      justifyContent: 'flex-start',
+      justifyContent: 'center',
       flexWrap: 'wrap'
     }}
   >
