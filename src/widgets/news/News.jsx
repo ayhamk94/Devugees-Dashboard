@@ -27,12 +27,11 @@ export default class News extends React.Component {
   articlesList(articles) {
     const listNewsArticles = articles.map(article => (
       <div key={article.title} className="articles">
-        <img className="news-logo" src={article.urlToImage} alt="news" />
-        <h3 className="news-title">{article.title}
-        </h3>
+        <div className="news-logo"><img  src={article.urlToImage} alt="news" /></div>
+        <p className="news-title">{article.title}
+        </p>
         <p className="news-description">{article.description}
-          <a href={article.url}>
-          more...
+          <a href={article.url}>  more...
           </a>
         </p>
 
@@ -64,6 +63,7 @@ export default class News extends React.Component {
     };
     return (
       <div className="wrapper-news">
+        <h1 className="main-header titel-news-widget ">Ars Technica</h1>
         {
         articles.length === 0
           ? <Spinner />
