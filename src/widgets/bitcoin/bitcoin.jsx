@@ -13,11 +13,15 @@ const styles = {
 export default class Bitcoin extends React.Component {
   constructor(props) {
     super(props);
+    this.tick = setInterval(this.interval, 60000)
     this.state = { data: [] };
   }
   componentDidMount() {
     this.interval()
-    setTimeout(this.interval, 60000)
+    this.tick
+  }
+  componentWillUnmount(){
+    clearInterval(this.tick)
   }
   interval = () => {
     const url = 'https://api.coindesk.com/v1/bpi/currentprice.json';
