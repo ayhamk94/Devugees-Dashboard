@@ -4,6 +4,7 @@ import { Tabs, Tab } from 'material-ui/Tabs';
 import LandingPage from '../landingPage/LandingPage';
 import ScorePage from '../scorePage/ScorePage';
 import QuizPage from '../quizPage/QuizPage';
+import PropTypes from 'prop-types';
 import './App.css';
 
 const styles = {
@@ -12,8 +13,7 @@ const styles = {
     paddingTop: 16,
     marginBottom: 12,
     fontWeight: 400,
-  },
-  slide: { padding: 10, },
+  }
 };
 
 class App extends React.Component {
@@ -21,13 +21,12 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      user: '',
+      user: 'ss',
       page: 'LandingPage',
       score: 0,
       slideIndex: 0,
-      diffeculty: 'hard',
+      diffeculty: 'easy',
       questionNum: 10,
-      catagories: '',
       questionArr: []
     };
   }
@@ -86,7 +85,7 @@ class App extends React.Component {
 
     return (
 
-      <div className="quizApp">
+      <div className="quizApp noselect">
         <div className="full-width">
           <Tabs onChange={this.handleChange} value={this.state.slideIndex} >
             <Tab label="Start" value={0} />
@@ -114,3 +113,17 @@ class App extends React.Component {
 }
 
 export default App;
+
+App.propTypes = {
+  user:         PropTypes.string,
+  diffeculty:   PropTypes.string,
+  questionArr:  PropTypes.array,
+  score:        PropTypes.number,
+  slideIndex:   PropTypes.number,
+  questionNum:  PropTypes.number,
+  value:        PropTypes.number,
+  onStartgame:  PropTypes.func,
+  newGame:      PropTypes.func,
+  tryAgain:     PropTypes.func,
+  quizFinished: PropTypes.func
+};
