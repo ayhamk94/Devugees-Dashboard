@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { amber700 } from 'material-ui/styles/colors';
 import AppBar from 'material-ui/AppBar';
 import ModeEdit from 'material-ui/svg-icons/editor/mode-edit';
 import IconButton from 'material-ui/IconButton';
@@ -9,16 +11,27 @@ class AppNav extends React.Component {
     const { ToggleEditMode, data, addRemoveWidgets } = this.props;
     return [
       <AppBar
+        titleStyle={{ color: amber700 }}
+        iconStyleLeft={{ color: amber700 }}
+        key="AppBar"
         title="St. Helens Dashboard"
         iconElementRight={<IconButton onClick={ToggleEditMode}><ModeEdit /></IconButton>}
         onLeftIconButtonClick={() => this.refs.sideDrawer.handleToggle()}
       />,
       <SideDrawer
+        key="SideDrawer"
         ref="sideDrawer"
-        up={data => this.props.addRemoveWidgets(data)}
+        up={data => addRemoveWidgets(data)}
         widgets={data}
       />
     ];
   }
 }
 export default AppNav;
+
+
+AppNav.propTypes = {
+  ToggleEditMode: PropTypes.func,
+  data: PropTypes.array.isRequired,
+  addRemoveWidgets: PropTypes.func,
+};

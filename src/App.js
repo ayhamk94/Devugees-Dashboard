@@ -1,17 +1,17 @@
 import React from 'react';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import { amber700, darkBlack } from 'material-ui/styles/colors';
 import Dashboard from './components/Dashboard';
 import AppNav from './components/Nav';
+import widgetsData from './data';
 import './App.css';
-import widgets from './data';
 
 
 const appTheme = getMuiTheme({
   palette: {
-    primary1Color: '#212121',
-    primary2Color: '#99003d',
-    primary3Color: '#ffcce0',
+    primary1Color: darkBlack,
+    accent1Color: amber700,
   },
   appBar: {
     height: 60,
@@ -23,24 +23,42 @@ class App extends React.Component {
     super(props);
     this.state = {
       editMode: false,
-      widgets: [],
+      widgets: []
     };
   }
   componentWillMount() {
-    this.setState({ widgets });
+    this.setState({ widgets: widgetsData });
+    this.handleLocal();
+  }
+
+  handleLocal() {
+    if (!localStorage.getItem('mounted')) {
+      this.saveLocal(widgetsData);
+    } else {
+      this.updateLocal(widgetsData, JSON.parse(localStorage.getItem('mounted')));
+    }
+  }
+  saveLocal(local) {
+    const mounted = local.filter(w => w.mounted).map(w => w.id);
+    localStorage.setItem('mounted', JSON.stringify(mounted));
+  }
+  updateLocal(widget, mounted) {
+    const local = widget;
+    local.map((a, i) => mounted.includes(a.id) ? local[i].mounted = true : local[i].mounted = false);
   }
 
   addRemoveWidgets(index) {
     const d = this.state.widgets;
     d[index].mounted = !d[index].mounted;
     this.setState({ widgets: d });
+    this.saveLocal(d);
   }
 
 
   ToggleEditMode = () => { this.setState({ editMode: !this.state.editMode }); }
 
   render() {
-    const { widgets, editMode, drawerOpen } = this.state;
+    const { widgets, editMode } = this.state;
     return (
       <div className="App">
         <MuiThemeProvider muiTheme={appTheme}>

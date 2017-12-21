@@ -1,0 +1,33 @@
+.container-scorePage {
+  display: flex;
+  flex-flow: column;
+}
+
+.left-pane {
+  float: left;
+  margin: auto;
+  padding-left: 50px;
+  padding-right: 25px;
+}
+
+.right-pane {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.btn-center {
+  display: flex;
+  flex-flow: column;
+  padding-top: 40px;
+
+  }
+
+#scoreText {
+  font-size: 1em;
+  
+}
+
+.card{
+  margin:0;
+}

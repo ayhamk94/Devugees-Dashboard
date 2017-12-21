@@ -9,14 +9,15 @@ import Decider from './widgets/decider/Decider';
 import News from './widgets/news/News';
 import Quote from './widgets/quote/Quote';
 import Schedule from './widgets/schedule/Schedule';
-
+import Bitcoin from './widgets/bitcoin/bitcoin';
+import Quiz from './widgets/quiz/Quiz';
 
 const widgets = [
   {
     name: 'Weather',
     component: <Weather />,
-    className: 'small',
-    id: 'ddw01',
+    className: 'small centerd',
+    id: 'ddw013245123',
     mounted: true,
     developerName: 'Ayham'
   },
@@ -24,15 +25,15 @@ const widgets = [
     name: 'News',
     component: <News />,
     className: 'small',
-    id: 'ddw01',
+    id: 'ddn0112315',
     mounted: true,
     developerName: 'Maxi'
   },
   {
     name: 'Clock',
     component: <Clock />,
-    className: 'small',
-    id: 'ddc0',
+    className: 'small centerd',
+    id: 'ddc0123125512',
     mounted: true,
     developerName: 'Axel'
 
@@ -41,7 +42,7 @@ const widgets = [
     name: 'Activity',
     component: <Activity />,
     className: 'medium',
-    id: 'dda0',
+    id: 'dda00283408',
     mounted: false,
     developerName: 'Ayham & Tommey'
 
@@ -50,7 +51,7 @@ const widgets = [
     name: 'Trello',
     component: <Trello />,
     className: 'small',
-    id: 'ddt0',
+    id: 'ddt089127389',
     mounted: false,
     developerName: 'Tommey'
 
@@ -59,7 +60,7 @@ const widgets = [
     name: 'Notes',
     component: <Notes />,
     className: 'medium',
-    id: 'ddn0',
+    id: 'ddn01938573237',
     mounted: false,
     developerName: 'Axel'
 
@@ -68,7 +69,7 @@ const widgets = [
     name: 'Movie',
     component: <Movie />,
     className: 'medium',
-    id: 'ddm0',
+    id: 'ddm07816239823470',
     mounted: true,
     developerName: 'Axel'
 
@@ -77,27 +78,45 @@ const widgets = [
     name: 'Decider',
     component: <Decider />,
     className: 'small',
-    id: 'ddd0',
+    id: 'ddd01928738924730',
     mounted: true,
     developerName: 'Tommey'
 
   },
-  // {
-  //   name: 'Quote',
-  //   component: <Quote />,
-  //   className: 'small',
-  //   id: 'ddq0',
-  //   mounted: true,
-  //   developerName: 'Maxi'
-  //
-  // },
+  {
+    name: 'Quote',
+    component: <Quote />,
+    className: 'small centerd',
+    id: 'ddq0',
+    mounted: true,
+    developerName: 'Maxi'
+
+  },
   {
     name: 'Schedule',
     component: <Schedule />,
     className: 'small schedule-card',
-    id: 'dds01',
+    id: 'dds0119723809823876243',
     mounted: true,
     developerName: 'Oliver'
-  }
+  },
+  {
+    name: 'Quiz',
+    component: <Quiz />,
+    className: 'medium',
+    id: 'ddqz',
+    mounted: true,
+    developerName: 'Nabeel'
+  },
+  {
+    name: 'Bitcoin',
+    component: <Bitcoin />,
+    className: 'small',
+    id: 'dddbit01',
+    mounted: true,
+    developerName: 'Asjad'
+  },
+
+
 ];
 export default widgets;

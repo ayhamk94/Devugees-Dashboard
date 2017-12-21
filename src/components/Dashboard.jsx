@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Paper from 'material-ui/Paper';
+import PropTypes from 'prop-types';
 import WidgetsContainer from './WidgetsContainer';
 import SideDrawer from './SideDrawer';
 
@@ -12,28 +13,29 @@ const styles = {
   }
 };
 
-class Dashboard extends Component {
-  render() {
-    const {
-      editMode, drawerOpen, toggleDrawer, data
-    } = this.props;
-    return (
-      <Paper style={styles.container}>
-        <SideDrawer
-          up={data => this.props.addRemoveWidgets(data)}
-          widgets={data}
-          drawerOpen={drawerOpen}
-          toggleDrawer={toggleDrawer}
-        />
-        <WidgetsContainer
-          up={data => this.props.addRemoveWidgets(data)}
-          editMode={editMode}
-          widgets={data}
-        />
-      </Paper>
-    );
-  }
-}
+const Dashboard = ({
+  editMode, data, addRemoveWidgets
+}) =>
+  (
+    <Paper style={styles.container}>
+      <SideDrawer
+        up={data => addRemoveWidgets(data)}
+        widgets={data}
+      />
+      <WidgetsContainer
+        up={data => addRemoveWidgets(data)}
+        editMode={editMode}
+        widgets={data}
+      />
+    </Paper>
 
+    );
 
 export default Dashboard;
+
+Dashboard.propTypes = {
+  editMode: PropTypes.bool,
+  toggleDrawer: PropTypes.func,
+  data: PropTypes.array.isRequired,
+  addRemoveWidgets: PropTypes.func,
+};

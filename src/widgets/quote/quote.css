@@ -1,7 +1,15 @@
+.quote-container {
+display: flex;
+align-items:center;
+padding: 1rem;
+text-align: center;
+position: relative;
+}
 .blockquote {
-  border-left: none;
-  top: 100px;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
 }
 
 .quotation-mark {
@@ -15,18 +23,21 @@
 }
 
 .quotation-mark.opening {
-  top: -270px;
+  top: -260px;
+  left: 0px;
 }
 
 .quotation-mark.closing {
   right: 0px;
-  top: -200px;
+  top: -150px;
 }
 
 .quote {
   position: relative;
   z-index: 10;
   user-select: none;
+  font-size: 1.5rem;
+  font-weight: 300;
 }
 
 .blockquote hr {
@@ -41,10 +52,12 @@
 }
 
 .author {
-  color: red;
+  color: var(--main-orange);
   -webkit-transition: color .3 ease;
   transition: color .3s ease;
   text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 .author:hover {

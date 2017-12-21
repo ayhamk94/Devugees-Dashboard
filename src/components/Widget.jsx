@@ -1,13 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import IconButton from 'material-ui/IconButton';
 import Remove from 'material-ui/svg-icons/action/delete';
 import { Card } from 'material-ui/Card';
 
 const styles = {
   contianer: {
-    padding: '1rem',
-    overflowY: 'scroll',
-    position: 'relative'
+    padding: '0.5rem',
+    overflowY: 'auto',
+    position: 'relative',
   },
   editButton: {
     position: 'absolute',
@@ -33,3 +34,11 @@ const Widget = ({
   </Card>
 );
 export default Widget;
+
+Widget.propTypes = {
+  index: PropTypes.number.isRequired,
+  up: PropTypes.func,
+  editMode: PropTypes.bool,
+  component: PropTypes.element.isRequired,
+  className: PropTypes.string.isRequired,
+};

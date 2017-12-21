@@ -1,14 +1,15 @@
 import React from 'react';
 import moment from 'moment';
+import PropTypes from 'prop-types';
 
 const PullRequest = (props) => {
   const {
-    title, user, merged_by, head, created_at, merged, html_url, action
+    title, user, merged_by, head, created_at, merged, html_url: htmlUrl
   } = props.payload.pull_request;
   return (
     <div className="pull-request">
       <div style={{ display: 'flex', flexDirection: 'column' }}>
-        <h4><a href={html_url}>{title}</a></h4>
+        <h4><a href={htmlUrl}>{title}</a></h4>
         <span>Status: {props.payload.action}</span>
         <span>{moment(created_at).fromNow()}</span>
         <span>Branch: {head.ref}</span>
@@ -22,3 +23,7 @@ const PullRequest = (props) => {
 };
 
 export default PullRequest;
+
+PullRequest.propTypes = {
+  payload: PropTypes.object,
+};

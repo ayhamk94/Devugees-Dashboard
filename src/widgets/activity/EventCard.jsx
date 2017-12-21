@@ -24,24 +24,24 @@ const EventCard = (props) => {
   }
   return [
     <Card
+      key='card'
       style={{
         marginTop: '5px',
         borderRadius: '0.2rem',
         boxShadow: 'none',
-}}
+      }}
     >
       <CardHeader
         title={actor.display_login}
         subtitle={`${events[type]} ${moment(created_at).fromNow()}`}
         actAsExpander
         avatar={actor.avatar_url}
-        showExpandableButton
       />
       <CardText expandable style={{ padding: '0px' }}>
         {cardText}
       </CardText>
     </Card>,
-    <Divider />
+    <Divider key='divider'/>
   ];
 };
 

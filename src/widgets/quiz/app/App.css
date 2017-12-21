@@ -1,0 +1,8 @@
+.quizApp {
+  margin-top: 35px;
+  text-align: center;
+}
+
+.style-override> div>div> div{
+  padding-right:0 !important;
+}

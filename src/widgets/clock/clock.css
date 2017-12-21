@@ -44,7 +44,7 @@
 }
 
 .second {
-  background: var(--red);
+  background: var(--main-orange);
   width: 50%;
   height: 3px;
 }
