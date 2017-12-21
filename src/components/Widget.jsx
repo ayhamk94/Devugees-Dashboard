@@ -6,20 +6,23 @@ import { Card } from 'material-ui/Card';
 
 const styles = {
   contianer: {
-    padding: '0.5rem',
+    padding: '0.8rem',
     overflowY: 'auto',
     position: 'relative',
   },
   editButton: {
+
+    display: 'flex',
+    alignItems: 'center',
     position: 'absolute',
     top: '-5px',
-    right: '-5px',
+    right: '5px',
     zIndex: '9999999999999999999'
   }
 };
 
 const Widget = ({
-  index, up, editMode, component, className
+  index, up, editMode, component, className, name
 }) => (
   <Card
     showExpandableButton={false}
@@ -27,9 +30,14 @@ const Widget = ({
     style={styles.contianer}
   >
     {editMode ?
-      <IconButton style={styles.editButton}>
-        <Remove className="top" onClick={() => up(index)}color="#cc0000" />
-      </IconButton> : null}
+      <div style={styles.editButton}>
+        <IconButton >
+          <Remove className="top" onClick={() => up(index)}color="#cc0000" />
+        </IconButton>
+        <span>{name}</span>
+      </div>
+      : null}
+
     {component}
   </Card>
 );

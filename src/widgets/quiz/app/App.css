@@ -6,3 +6,7 @@
 .style-override> div>div> div{
   padding-right:0 !important;
 }
+
+.noselect{
+   user-select: none;
+}

@@ -7,7 +7,7 @@ import SideDrawer from './SideDrawer';
 const styles = {
   container: {
     display: 'flex',
-    backgroundColor: '#E0E0E0',
+    backgroundColor: '#b3b3b3',
     borderRadius: 'none',
     alignItems: 'flex-start'
   }

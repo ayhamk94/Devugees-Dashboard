@@ -1,5 +1,6 @@
 import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
+import PropTypes from 'prop-types';
 import './ScorePage.css';
 
 class ScorePage extends React.Component {
@@ -86,3 +87,12 @@ class ScorePage extends React.Component {
 }
 
 export default ScorePage;
+
+ScorePage.propTypes = {
+  user:     PropTypes.string,
+  score:    PropTypes.number,
+  tryAgain: PropTypes.func,
+  newGame:  PropTypes.func,
+  handleLeaderBoard:          PropTypes.func,
+  handleLeaderBoardComponent: PropTypes.func,
+}
