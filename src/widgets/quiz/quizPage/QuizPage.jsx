@@ -3,6 +3,7 @@ import Check from 'material-ui/svg-icons/navigation/check';
 import Close from 'material-ui/svg-icons/navigation/close';
 import RaisedButton from 'material-ui/RaisedButton';
 import { CardActions } from 'material-ui/Card';
+import PropTypes from 'prop-types';
 import './QuizPage.css';
 
 class QuizPage extends React.Component {
@@ -58,3 +59,10 @@ class QuizPage extends React.Component {
 }
 
 export default QuizPage;
+QuizPage.propTypes={
+  score:          PropTypes.number,
+  question:       PropTypes.number,
+  questionArr:    PropTypes.array.isRequierd,
+  quizFinished:   PropTypes.func.isRequierd,
+  handleValidate: PropTypes.func
+}

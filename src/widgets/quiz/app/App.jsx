@@ -4,6 +4,7 @@ import { Tabs, Tab } from 'material-ui/Tabs';
 import LandingPage from '../landingPage/LandingPage';
 import ScorePage from '../scorePage/ScorePage';
 import QuizPage from '../quizPage/QuizPage';
+import PropTypes from 'prop-types';
 import './App.css';
 
 const styles = {
@@ -12,8 +13,7 @@ const styles = {
     paddingTop: 16,
     marginBottom: 12,
     fontWeight: 400,
-  },
-  slide: { padding: 10, },
+  }
 };
 
 class App extends React.Component {
@@ -25,9 +25,8 @@ class App extends React.Component {
       page: 'LandingPage',
       score: 0,
       slideIndex: 0,
-      diffeculty: 'hard',
+      diffeculty: 'easy',
       questionNum: 10,
-      catagories: '',
       questionArr: []
     };
   }
@@ -114,3 +113,17 @@ class App extends React.Component {
 }
 
 export default App;
+
+App.propTypes = {
+  user:         PropTypes.string.isRequierd,
+  diffeculty:   PropTypes.string,
+  questionArr:  PropTypes.array.isRequierd,
+  score:        PropTypes.number,
+  slideIndex:   PropTypes.number.isRequierd,
+  questionNum:  PropTypes.number.isRequierd,
+  value:        PropTypes.number.isRequierd,
+  onStartgame:  PropTypes.func,
+  newGame:      PropTypes.func,
+  tryAgain:     PropTypes.func,
+  quizFinished: PropTypes.func
+};

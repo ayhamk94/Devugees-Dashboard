@@ -2,6 +2,7 @@ import React from 'react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import { Card, CardActions, CardHeader, CardText } from 'material-ui/Card';
+import PropTypes from 'prop-types';
 import './LandingPage.css';
 
 
@@ -91,3 +92,9 @@ class LandingPage extends React.Component {
   }
 }
 export default LandingPage;
+
+LandingPage.propTypes={
+  onStartgame:  PropTypes.func,
+  value:        PropTypes.number.isRequierd,
+  diffeculty:   PropTypes.string,
+}
