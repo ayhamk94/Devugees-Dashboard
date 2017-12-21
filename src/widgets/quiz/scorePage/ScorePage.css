@@ -20,12 +20,12 @@
   display: flex;
   flex-flow: column;
   padding-top: 40px;
-  padding-left: 25px;
+
   }
 
 #scoreText {
-  font-size: 1.25em;
-  text-shadow: 2px 1px 7px #800000;
+  font-size: 1em;
+  
 }
 
 .card{

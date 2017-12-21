@@ -61,7 +61,7 @@ class ScorePage extends React.Component {
         <div className="right-pane">
           <div className="btn-center ">
             <RaisedButton
-              primary="true"
+              primary={false}
               id="rightbtn"
               onClick={() => this.props.tryAgain()}
             >Try Again
@@ -70,7 +70,7 @@ class ScorePage extends React.Component {
                 aria-hidden="true"
               /></RaisedButton>
             <RaisedButton
-              secondary="true"
+              secondary={true}
               id="rightbtn"
               onClick={() => this.props.newGame()}
             >New Game

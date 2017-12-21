@@ -6,9 +6,9 @@ import { Card } from 'material-ui/Card';
 
 const styles = {
   contianer: {
-    padding: '1rem',
+    padding: '0.5rem',
     overflowY: 'auto',
-    position: 'relative'
+    position: 'relative',
   },
   editButton: {
     position: 'absolute',

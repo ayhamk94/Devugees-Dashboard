@@ -1,8 +1,9 @@
 import React from 'react';
+import Divider from 'material-ui/Divider';
 import Spinner from '../../components/Spinner';
 import './quote.css';
 
-import { cors } from '../../utils.js'
+import { cors } from '../../utils.js';
 
 export default class Quote extends React.Component {
   constructor(props) {
@@ -35,17 +36,18 @@ export default class Quote extends React.Component {
     const quote = existenQuote.quote;
     const author = existenQuote.author;
     return (
-      <div>
+      <div className="quote-container">
         {
         existenQuote.length === 0
           ? <Spinner />
         : <div className="blockquote">
+
           <p className="quotation-mark opening">&ldquo;</p>
-          <h3 className="quote">{quote}</h3>
+          <p className="quote">{quote}</p>
           <p className="quotation-mark closing">
                   &rdquo;
           </p>
-          <hr />
+          <Divider />
           <p className="author">{author}</p>
         </div>
       }

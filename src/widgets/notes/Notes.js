@@ -6,7 +6,7 @@ import moment from 'moment';
 // Material UI
 import { List, ListItem } from 'material-ui/List';
 import Divider from 'material-ui/Divider';
-import { cyan100, lightBlack } from 'material-ui/styles/colors';
+import { lightBlack, amber50 } from 'material-ui/styles/colors';
 
 // Components
 import CreatePost from './CreatePost';
@@ -67,7 +67,7 @@ class PostsList extends React.Component {
                 nestedItems={[
                   <ListItem style={{ whiteSpace: 'pre-wrap', fontSize: '14px', fontWeight: 400 }} disabled key={p.created} primaryText={p.text} />
                 ]}
-                hoverColor={cyan100}
+                hoverColor={amber50}
               />
               <Divider />
             </div>
