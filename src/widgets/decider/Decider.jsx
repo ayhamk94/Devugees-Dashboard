@@ -53,7 +53,7 @@ export default class Activity extends React.Component {
     ];
     return (
       <div className="decider" style={styles.center}>
-        <h1>The Decider</h1>
+        <h1 className="main-header">The Decider</h1>
         <p style={styles.mb3}>
           The indispensable tool for every important decision in your company.
         </p>

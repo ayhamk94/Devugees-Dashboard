@@ -1,5 +1,6 @@
 import React from 'react';
 import { List, ListItem } from 'material-ui/List';
+import Divider from 'material-ui/Divider';
 import Subheader from 'material-ui/Subheader';
 import Spinner from '../../components/Spinner';
 import bitCoinWidget from './Bitcoin-icon.png';
@@ -24,28 +25,28 @@ export default class Bitcoin extends React.Component {
   render() {
     const { data } = this.state;
     return (
-      <div style={{ height: '100%' }}>
+      <div>
         {
         data && data.bpi ?
-          <div>
-            <div style={{ display: 'flex', alignItems: 'center' }}>
-
-              <span><img style={{ width: '64px', height: '64px' }} alt="bitcoin icon" src={bitCoinWidget} /></span>
-              <h1>Rate</h1>
+          <div style={{ minHeight: '350px', display: 'flex', flexDirection: 'column', alignItems: 'space-between', justifyContent: 'space-between' }}>
+            <div>
+              <div style={{ display: 'flex', alignItems: 'center' }}>
+                <span><img style={{ width: '64px', height: '64px' }} alt="bitcoin icon" src={bitCoinWidget} /></span>
+                <h1 className="main-header">Rate</h1>
+              </div>
+              <Divider />
             </div>
 
             <div style={styles.rate}>
               <List>
-                <Subheader><strong>Rate</strong></Subheader>
                 <ListItem primaryText={`${data.bpi.USD.rate.toString()} $`} />
                 <ListItem primaryText={`${data.bpi.EUR.rate.toString()} €`} />
                 <ListItem primaryText={`${data.bpi.GBP.rate.toString()} £`} />
               </List>
-
-              <br />
-              <br />
-              <small><div>Updated: <br /> {data.time.updated}</div></small>
-
+            </div>
+            <div>
+              <Divider />
+              <Subheader>Updated: {data.time.updated}</Subheader>
             </div>
           </div>
         :
