@@ -23,17 +23,36 @@ class App extends React.Component {
     super(props);
     this.state = {
       editMode: false,
-      widgets: [],
+      widgets: []
     };
   }
   componentWillMount() {
     this.setState({ widgets: widgetsData });
+    this.handleLocal()
+  }
+
+  handleLocal() {
+    if (!localStorage.getItem('mounted')) {
+      this.saveLocal(widgetsData)
+    }
+    else {
+      this.updateLocal(widgetsData, JSON.parse(localStorage.getItem('mounted')))
+    }
+  }
+  saveLocal(local){
+    const mounted = local.filter(w => w.mounted).map(w => w.id)
+    localStorage.setItem('mounted', JSON.stringify(mounted))
+  }
+  updateLocal(widget, mounted){
+    const local = widget
+    local.map((a, i) => mounted.includes(a.id) ? local[i].mounted = true : local[i].mounted = false)
   }
 
   addRemoveWidgets(index) {
     const d = this.state.widgets;
     d[index].mounted = !d[index].mounted;
     this.setState({ widgets: d });
+    this.saveLocal(d)
   }
 
 
