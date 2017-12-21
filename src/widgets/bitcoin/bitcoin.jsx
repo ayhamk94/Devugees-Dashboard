@@ -39,9 +39,9 @@ export default class Bitcoin extends React.Component {
 
             <div style={styles.rate}>
               <List>
-                <ListItem primaryText={`${data.bpi.USD.rate.toString()} $`} />
-                <ListItem primaryText={`${data.bpi.EUR.rate.toString()} €`} />
-                <ListItem primaryText={`${data.bpi.GBP.rate.toString()} £`} />
+                <ListItem primaryText={`${data.bpi.USD.rate.split("").slice(0, -2).join("")} $`} />
+                <ListItem primaryText={`${data.bpi.EUR.rate.split("").slice(0, -2).join("")} €`} />
+                <ListItem primaryText={`${data.bpi.GBP.rate.split("").slice(0, -2).join("")} £`} />
               </List>
             </div>
             <div>
