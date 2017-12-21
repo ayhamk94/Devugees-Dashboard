@@ -52,7 +52,7 @@ const widgets = [
     component: <Trello />,
     className: 'small',
     id: 'ddt089127389',
-    mounted: false,
+    mounted: true,
     developerName: 'Tommey'
 
   },
