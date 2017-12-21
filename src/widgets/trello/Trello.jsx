@@ -1,23 +1,14 @@
 import React from 'react';
 import Trello from 'node-trello';
-import { List, ListItem } from 'material-ui/List';
-import Done from 'material-ui/svg-icons/action/done';
-import Report from 'material-ui/svg-icons/action/report-problem';
+import { List } from 'material-ui/List';
 import Setting from 'material-ui/svg-icons/action/settings';
-import FileCloudDownload from 'material-ui/svg-icons/file/cloud-download';
-import {BottomNavigation, BottomNavigationItem} from 'material-ui/BottomNavigation';
 import './trello.css';
 import MainInfo from './mainInfo';
-import Spinner from '../../components/Spinner';
 import ApiKey from './ApiKey';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
-import RaisedButton from 'material-ui/RaisedButton';
 
 
-const done = <Done/>
-const report_problem = <Report/>
-const settings = <Setting/>
 
 export default class Activity extends React.Component {
   constructor(props) {
