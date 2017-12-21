@@ -10,6 +10,7 @@ import News from './widgets/news/News';
 import Quote from './widgets/quote/Quote';
 import Schedule from './widgets/schedule/Schedule';
 import Quiz from './widgets/quiz/Quiz';
+import Gmap from './widgets/maps/Gmap';
 
 
 const widgets = [
@@ -101,11 +102,19 @@ const widgets = [
     developerName: 'Oliver'
   },
   {
-    name: 'Quiz',
-    component: <Quiz />,
+    name:'Quiz',
+    component:<Quiz />,
     className: 'medium',
     id: 'ddqz',
     mounted: true,
+    developerName: 'Nabeel'
+  },
+  {
+    name:'Gmap',
+    component:<Gmap />,
+    className: 'small',
+    id: 'ddgm',
+    mounted:true,
     developerName: 'Nabeel'
   }
 ];
