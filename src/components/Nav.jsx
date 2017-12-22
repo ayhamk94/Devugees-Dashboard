@@ -8,14 +8,14 @@ import SideDrawer from './SideDrawer';
 
 class AppNav extends React.Component {
   render() {
-    const { ToggleEditMode, data, addRemoveWidgets } = this.props;
+    const { ToggleEditMode, data, addRemoveWidgets, editMode } = this.props;
     return [
       <AppBar
         titleStyle={{ color: amber700 }}
         iconStyleLeft={{ color: amber700 }}
         key="AppBar"
         title="St. Helens Dashboard"
-        iconElementRight={<IconButton onClick={ToggleEditMode}><ModeEdit /></IconButton>}
+        iconElementRight={<IconButton onClick={ToggleEditMode}><ModeEdit color={editMode ? '#FFA000' : '#fff' }/></IconButton>}
         onLeftIconButtonClick={() => this.refs.sideDrawer.handleToggle()}
       />,
       <SideDrawer
