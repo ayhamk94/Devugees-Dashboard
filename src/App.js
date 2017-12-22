@@ -63,6 +63,7 @@ class App extends React.Component {
       <div className="App">
         <MuiThemeProvider muiTheme={appTheme}>
           <AppNav
+            editMode={editMode}
             ToggleEditMode={this.ToggleEditMode}
             data={widgets}
             addRemoveWidgets={widgets => this.addRemoveWidgets(widgets)}
