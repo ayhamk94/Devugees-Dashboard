@@ -31,7 +31,7 @@ export default class News extends React.Component {
         <p className="news-title">{article.title}
         </p>
         <p className="news-description">{article.description}
-          <a href={article.url}>  more...
+          <a  target="_blank" href={article.url}>  more...
           </a>
         </p>
 
