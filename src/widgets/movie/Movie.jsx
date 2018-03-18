@@ -17,7 +17,7 @@ const ShowMovie = ({ data }) => (
   <div className="movie-wrapper">
     <div className="movie-img">
       <a target="_blank" href={`https://www.themoviedb.org/movie/${data.id}`}>
-        <img src={img(data.poster_path, 'w400')} className="" alt="" />
+        <img src={img(data.poster_path, 'w400')} alt={data.original_title} />
       </a>
     </div>
     <div className="movie-info">
